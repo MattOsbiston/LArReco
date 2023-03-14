@@ -16,21 +16,24 @@
         <FilteredCaloHitListName>CaloHitList2D</FilteredCaloHitListName>
         <CurrentCaloHitListReplacement>CaloHitList2D</CurrentCaloHitListReplacement>
     </algorithm>
-
+ 
     <algorithm type = "LArMCParticleMonitoring">
        <MCParticleListName>Input</MCParticleListName>
        <CaloHitListName>CaloHitList2D</CaloHitListName>
        <MinHitsForDisplay>1</MinHitsForDisplay>
     </algorithm>
-
-    <!---algorithm type = "LArVisualMonitoring">
+    
+    <algorithm type = "LArVisualParticleMonitoring">
         <CaloHitListNames>CaloHitListU CaloHitListV CaloHitListW</CaloHitListNames>
-        <ShowDetector>true</ShowDetector>
-    </algorithm-->
+        <MCParticleListNames>Input</MCParticleListNames>
+        <ShowPFOMatchedMC>true</ShowPFOMatchedMC>
+        <VisualizeMC>true</VisualizeMC>
+        <VisualizePFO>true</VisualizePFO>
+    </algorithm>
 
     <algorithm type = "LArMaster">
         <CRSettingsFile>PandoraSettings_Cosmic_DUNEFD_VD.xml</CRSettingsFile>
-        <NuSettingsFile>PandoraSettings_Neutrino_DUNEFD_VD.xml</NuSettingsFile>
+        <NuSettingsFile>PandoraSettings_Neutrino_DUNEFD_VD_Cheat_Cluster.xml</NuSettingsFile>
         <SlicingSettingsFile>PandoraSettings_Slicing_Standard.xml</SlicingSettingsFile>
         <StitchingTools>
             <tool type = "LArStitchingCosmicRayMerging"><ThreeDStitchingMode>true</ThreeDStitchingMode></tool>
@@ -44,7 +47,7 @@
         </SliceIdTools>
         <InputHitListName>CaloHitList2D</InputHitListName>
         <InputMCParticleListName>Input</InputMCParticleListName>
-        <PassMCParticlesToWorkerInstances>false</PassMCParticlesToWorkerInstances>
+        <PassMCParticlesToWorkerInstances>true</PassMCParticlesToWorkerInstances>
         <RecreatedPfoListName>RecreatedPfos</RecreatedPfoListName>
         <RecreatedClusterListName>RecreatedClusters</RecreatedClusterListName>
         <RecreatedVertexListName>RecreatedVertices</RecreatedVertexListName>
@@ -54,14 +57,14 @@
     <algorithm type = "LArVertexMonitoring">
         <Visualize>false</Visualize>
         <WriteFile>true</WriteFile>
-        <Filename>vertices_std.root</Filename>
+        <Filename>vertices_cheat_cluster.root</Filename>
         <Treename>vertices</Treename>
     </algorithm>
 
     <algorithm type = "LArHierarchyValidation">
         <ValidateMC>true</ValidateMC>
         <WriteTree>true</WriteTree>
-        <FileName>hierarchy_validation_std.root</FileName>
+        <FileName>hierarchy_validation_cheat_cluster.root</FileName>
         <TreeName>mc</TreeName>
         <FoldToPrimaries>true</FoldToPrimaries>
         <MinHits>1</MinHits>
@@ -69,7 +72,15 @@
         <MinGoodViews>2</MinGoodViews>
         <RemoveNeutrons>false</RemoveNeutrons>
     </algorithm>
- 
+    
+    <algorithm type = "LArVisualParticleMonitoring">
+        <CaloHitListNames>CaloHitListU CaloHitListV CaloHitListW</CaloHitListNames>
+        <MCParticleListNames>Input</MCParticleListNames>
+        <ShowPFOMatchedMC>true</ShowPFOMatchedMC>
+        <VisualizeMC>true</VisualizeMC>
+        <VisualizePFO>true</VisualizePFO>
+    </algorithm>
+    
     <!--algorithm type = "LArNeutrinoEventValidation">
         <CaloHitListName>CaloHitList2D</CaloHitListName>
         <MCParticleListName>Input</MCParticleListName>
