@@ -64,24 +64,12 @@
         <FileName>hierarchy_validation_config.root</FileName>
         <TreeName>mc</TreeName>
         <FoldToPrimaries>true</FoldToPrimaries>
-        <MinHits>1</MinHits>
+        <MinHits>3</MinHits>
         <MinHitsForGoodView>1</MinHitsForGoodView>
         <MinGoodViews>2</MinGoodViews>
         <RemoveNeutrons>false</RemoveNeutrons>
     </algorithm>
  
-    <!--algorithm type = "LArNeutrinoEventValidation">
-        <CaloHitListName>CaloHitList2D</CaloHitListName>
-        <MCParticleListName>Input</MCParticleListName>
-        <PfoListName>RecreatedPfos</PfoListName>
-        <UseTrueNeutrinosOnly>false</UseTrueNeutrinosOnly>
-        <PrintAllToScreen>true</PrintAllToScreen>
-        <PrintMatchingToScreen>true</PrintMatchingToScreen>
-        <WriteToTree>false</WriteToTree>
-        <OutputTree>Validation</OutputTree>
-        <OutputFile>Validation.root</OutputFile>
-    </algorithm-->
-
     <!--algorithm type = "LArVisualParticleMonitoring">
         <ShowCurrentPfos>true</ShowCurrentPfos>
         <ShowMC

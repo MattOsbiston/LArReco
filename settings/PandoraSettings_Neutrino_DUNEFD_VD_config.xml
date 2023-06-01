@@ -148,8 +148,8 @@
         <InputClusterListNameW>ClustersW</InputClusterListNameW>
         <OutputPfoListName>TrackParticles3D</OutputPfoListName>
         <TrackTools>
-            <tool type = "LArClearLongitudinalTracks"/><MinMatchedFraction>0.5</MinMatchedFraction>
-            <tool type = "LArMatchedEndPoints"/><MaxEndPointChi2>>10</MaxEndPointChi2><MinMatchedFraction>0.5</MinMatchedFraction>
+            <tool type = "LArClearLongitudinalTracks"/><!--MinMatchedFraction>0.5</MinMatchedFraction-->
+            <tool type = "LArMatchedEndPoints"/><!--MaxEndPointChi2>>10</MaxEndPointChi2><MinMatchedFraction>0.5</MinMatchedFraction-->
         </TrackTools>
     </algorithm>
     <!--algorithm type = "LArThreeDTrackFragments">
@@ -199,10 +199,10 @@
     </algorithm-->
 
     <!-- ThreeDRecoveryAlgorithms -->
-    <!--algorithm type = "LArVertexBasedPfoRecovery">
+    <algorithm type = "LArVertexBasedPfoRecovery">
         <InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
         <OutputPfoListName>TrackParticles3D</OutputPfoListName>
-    </algorithm-->
+    </algorithm>
     <!--algorithm type = "LArParticleRecovery">
         <InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
         <OutputPfoListName>TrackParticles3D</OutputPfoListName>
