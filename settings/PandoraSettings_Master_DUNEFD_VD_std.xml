@@ -23,7 +23,7 @@
        <MinHitsForDisplay>1</MinHitsForDisplay>
     </algorithm>
 
-    <!--algorithm type = "LArVisualMonitoring">
+    <!---algorithm type = "LArVisualMonitoring">
         <CaloHitListNames>CaloHitListU CaloHitListV CaloHitListW</CaloHitListNames>
         <ShowDetector>true</ShowDetector>
     </algorithm-->
@@ -53,26 +53,29 @@
 
     <!--algorithm type = "LArVertexMonitoring">
         <Visualize>false</Visualize>
-        <WriteFile>false</WriteFile>
-        <Filename>vertices_shower_reduced.root</Filename>
+        <WriteFile>true</WriteFile>
+        <Filename>vertices_std2.root</Filename>
         <Treename>vertices</Treename>
     </algorithm-->
 
-    <algorithm type = "LArHierarchyValidation">
+    <!--algorithm type = "LArHierarchyValidation">
         <ValidateMC>true</ValidateMC>
         <WriteTree>true</WriteTree>
-        <FileName>hierarchy_validation_config.root</FileName>
+        <FileName>hierarchy_validation_std.root</FileName>
         <TreeName>mc</TreeName>
         <FoldToPrimaries>true</FoldToPrimaries>
         <MinHits>3</MinHits>
         <MinHitsForGoodView>1</MinHitsForGoodView>
         <MinGoodViews>2</MinGoodViews>
         <RemoveNeutrons>false</RemoveNeutrons>
-    </algorithm>
- 
-    <!--algorithm type = "LArVisualParticleMonitoring">
-        <ShowCurrentPfos>true</ShowCurrentPfos>
-        <ShowMC
-        <ShowDetector>true</ShowDetector>
     </algorithm-->
+
+    <algorithm type = "LArVisualParticleMonitoring">
+        <CaloHitListNames>CaloHitList2D</CaloHitListNames>
+        <MCParticleListNames>Input</MCParticleListNames>
+        <ShowPFOMatchedMC>true</ShowPFOMatchedMC>
+        <VisualizeMC>true</VisualizeMC>
+        <VisualizePFO>true</VisualizePFO>
+    </algorithm>
+
 </pandora>

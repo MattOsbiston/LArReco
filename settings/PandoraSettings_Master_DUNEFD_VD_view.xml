@@ -23,14 +23,14 @@
        <MinHitsForDisplay>1</MinHitsForDisplay>
     </algorithm>
 
-    <!--algorithm type = "LArVisualMonitoring">
+    <algorithm type = "LArVisualMonitoring">
         <CaloHitListNames>CaloHitListU CaloHitListV CaloHitListW</CaloHitListNames>
         <ShowDetector>true</ShowDetector>
-    </algorithm-->
+    </algorithm>
 
     <algorithm type = "LArMaster">
         <CRSettingsFile>PandoraSettings_Cosmic_DUNEFD_VD.xml</CRSettingsFile>
-        <NuSettingsFile>PandoraSettings_Neutrino_DUNEFD_VD_std.xml</NuSettingsFile>
+        <NuSettingsFile>PandoraSettings_Neutrino_DUNEFD_VD_config.xml</NuSettingsFile>
         <SlicingSettingsFile>PandoraSettings_Slicing_Standard.xml</SlicingSettingsFile>
         <StitchingTools>
             <tool type = "LArStitchingCosmicRayMerging"><ThreeDStitchingMode>true</ThreeDStitchingMode></tool>
@@ -70,9 +70,13 @@
         <RemoveNeutrons>false</RemoveNeutrons>
     </algorithm>
  
-    <!--algorithm type = "LArVisualParticleMonitoring">
-        <ShowCurrentPfos>true</ShowCurrentPfos>
-        <ShowMC
-        <ShowDetector>true</ShowDetector>
-    </algorithm-->
+
+    <algorithm type = "LArVisualParticleMonitoring">
+        <CaloHitListNames>CaloHitList2D</CaloHitListNames>
+        <MCParticleListNames>Input</MCParticleListNames>
+        <ShowPFOMatchedMC>true</ShowPFOMatchedMC>
+        <VisualizeMC>true</VisualizeMC>
+        <VisualizePFO>true</VisualizePFO>
+    </algorithm>
+
 </pandora>

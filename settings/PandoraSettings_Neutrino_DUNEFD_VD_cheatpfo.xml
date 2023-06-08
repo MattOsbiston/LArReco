@@ -122,99 +122,13 @@
         <InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
     </algorithm>
 
-    <!-- ThreeDTrackAlgorithms -->
-    <!--algorithm type = "LArThreeDTransverseTracks">
-        <InputClusterListNameU>ClustersU</InputClusterListNameU>
-        <InputClusterListNameV>ClustersV</InputClusterListNameV>
-        <InputClusterListNameW>ClustersW</InputClusterListNameW>
-        <OutputPfoListName>TrackParticles3D</OutputPfoListName>
-        <TrackTools>
-            <tool type = "LArClearTracks"/>
-            <tool type = "LArLongTracks"/>
-            <tool type = "LArOvershootTracks"><SplitMode>true</SplitMode></tool>
-            <tool type = "LArUndershootTracks"><SplitMode>true</SplitMode></tool>
-            <tool type = "LArOvershootTracks"><SplitMode>false</SplitMode></tool>
-            <tool type = "LArUndershootTracks"><SplitMode>false</SplitMode></tool>
-            <tool type = "LArMissingTrackSegment"/>
-            <tool type = "LArTrackSplitting"/>
-            <tool type = "LArLongTracks"><MinMatchedFraction>0.75</MinMatchedFraction><MinXOverlapFraction>0.75</MinXOverlapFraction></tool>
-            <tool type = "LArTracksCrossingGaps"><MinMatchedFraction>0.75</MinMatchedFraction><MinXOverlapFraction>0.75</MinXOverlapFraction></tool>
-            <tool type = "LArMissingTrack"/>
-        </TrackTools>
-    </algorithm-->
-    <algorithm type = "LArThreeDLongitudinalTracks">
-        <InputClusterListNameU>ClustersU</InputClusterListNameU>
-        <InputClusterListNameV>ClustersV</InputClusterListNameV>
-        <InputClusterListNameW>ClustersW</InputClusterListNameW>
-        <OutputPfoListName>TrackParticles3D</OutputPfoListName>
-        <TrackTools>
-            <tool type = "LArClearLongitudinalTracks"/><MinMatchedFraction>0.5</MinMatchedFraction>
-            <tool type = "LArMatchedEndPoints"/><MaxEndPointChi2>>10</MaxEndPointChi2><MinMatchedFraction>0.5</MinMatchedFraction>
-        </TrackTools>
-    </algorithm>
-    <!--algorithm type = "LArThreeDTrackFragments">
-        <MinClusterLength>5.</MinClusterLength>
-        <InputClusterListNameU>ClustersU</InputClusterListNameU>
-        <InputClusterListNameV>ClustersV</InputClusterListNameV>
-        <InputClusterListNameW>ClustersW</InputClusterListNameW>
-        <OutputPfoListName>TrackParticles3D</OutputPfoListName>
-        <TrackTools>
-            <tool type = "LArClearTrackFragments"/>
-        </TrackTools>
-        <algorithm type = "LArSimpleClusterCreation" description = "ClusterRebuilding"/>
-    </algorithm-->
-
-    <!-- ThreeDShowerAlgorithms -->
-    <!--algorithm type = "LArCutPfoCharacterisation">
-        <TrackPfoListName>TrackParticles3D</TrackPfoListName>
-        <ShowerPfoListName>ShowerParticles3D</ShowerPfoListName>
-        <UseThreeDInformation>false</UseThreeDInformation>
-        <MaxShowerLengthCut>500.</MaxShowerLengthCut>
-        <VertexDistanceRatioCut>500.</VertexDistanceRatioCut>
-    </algorithm>
-    <algorithm type = "LArListDeletion">
-        <PfoListNames>ShowerParticles3D</PfoListNames>
-    </algorithm>
-    <algorithm type = "LArCutClusterCharacterisation">
-        <InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
-        <OverwriteExistingId>true</OverwriteExistingId>
-        <MaxShowerLengthCut>500.</MaxShowerLengthCut>
-        <VertexDistanceRatioCut>500.</VertexDistanceRatioCut>
-        <PathLengthRatioCut>1.012</PathLengthRatioCut>
-        <ShowerWidthRatioCut>0.2</ShowerWidthRatioCut>
-    </algorithm>
-    <algorithm type = "LArShowerGrowing">
-        <InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
-    </algorithm>
-    <algorithm type = "LArThreeDShowers">
-        <InputClusterListNameU>ClustersU</InputClusterListNameU>
-        <InputClusterListNameV>ClustersV</InputClusterListNameV>
-        <InputClusterListNameW>ClustersW</InputClusterListNameW>
-        <OutputPfoListName>ShowerParticles3D</OutputPfoListName>
-        <ShowerTools>
-            <tool type = "LArClearShowers"/>
-            <tool type = "LArSplitShowers"/>
-            <tool type = "LArSimpleShowers"/>
-        </ShowerTools>
-    </algorithm-->
-
-    <!-- ThreeDRecoveryAlgorithms -->
-    <algorithm type = "LArVertexBasedPfoRecovery">
+    <algorithm type = "LArCheatingPfoCreation">
         <InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
         <OutputPfoListName>TrackParticles3D</OutputPfoListName>
+        <AddVertices>false</AddVertices>
+        <CollapseToPrimaryMCParticles>false</CollapseToPrimaryMCParticles>
+        <MCParticleListName>Input</MCParticleListName>
     </algorithm>
-    <!--algorithm type = "LArParticleRecovery">
-        <InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
-        <OutputPfoListName>TrackParticles3D</OutputPfoListName>
-    </algorithm>
-    <algorithm type = "LArParticleRecovery">
-        <InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
-        <OutputPfoListName>TrackParticles3D</OutputPfoListName>
-        <VertexClusterMode>true</VertexClusterMode>
-        <MinXOverlapFraction>0.5</MinXOverlapFraction>
-        <MinClusterCaloHits>5</MinClusterCaloHits>
-        <MinClusterLength>1.</MinClusterLength>
-    </algorithm-->
 
     <!-- TwoDMopUpAlgorithms -->
     <algorithm type = "LArBoundedClusterMopUp">
@@ -229,15 +143,6 @@
         <PfoListNames>ShowerParticles3D</PfoListNames>
         <DaughterListNames>ClustersU ClustersV ClustersW</DaughterListNames>
     </algorithm>
-
-    <algorithm type = "LArCheatingPfoCreation">
-        <InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
-        <OutputPfoListName>TrackParticles3D</OutputPfoListName>
-        <AddVertices>false</AddVertices>
-        <CollapseToPrimaryMCParticles>false</CollapseToPrimaryMCParticles>
-        <MCParticleListName>Input</MCParticleListName>
-    </algorithm>
-
     
     <!-- ThreeDHitAlgorithms -->
     <algorithm type = "LArCutPfoCharacterisation">

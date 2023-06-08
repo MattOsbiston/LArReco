@@ -23,14 +23,14 @@
        <MinHitsForDisplay>1</MinHitsForDisplay>
     </algorithm>
 
-    <!--algorithm type = "LArVisualMonitoring">
+    <algorithm type = "LArVisualMonitoring">
         <CaloHitListNames>CaloHitListU CaloHitListV CaloHitListW</CaloHitListNames>
         <ShowDetector>true</ShowDetector>
-    </algorithm-->
+    </algorithm>
 
     <algorithm type = "LArMaster">
         <CRSettingsFile>PandoraSettings_Cosmic_DUNEFD_VD.xml</CRSettingsFile>
-        <NuSettingsFile>PandoraSettings_Neutrino_DUNEFD_VD_std.xml</NuSettingsFile>
+        <NuSettingsFile>PandoraSettings_Neutrino_DUNEFD_VD_cheatpfo.xml</NuSettingsFile>
         <SlicingSettingsFile>PandoraSettings_Slicing_Standard.xml</SlicingSettingsFile>
         <StitchingTools>
             <tool type = "LArStitchingCosmicRayMerging"><ThreeDStitchingMode>true</ThreeDStitchingMode></tool>
@@ -58,21 +58,24 @@
         <Treename>vertices</Treename>
     </algorithm-->
 
-    <algorithm type = "LArHierarchyValidation">
+    <!--algorithm type = "LArHierarchyValidation">
         <ValidateMC>true</ValidateMC>
         <WriteTree>true</WriteTree>
-        <FileName>hierarchy_validation_config.root</FileName>
+        <FileName>hierarchy_validation_cheatpfo.root</FileName>
         <TreeName>mc</TreeName>
         <FoldToPrimaries>true</FoldToPrimaries>
         <MinHits>3</MinHits>
         <MinHitsForGoodView>1</MinHitsForGoodView>
         <MinGoodViews>2</MinGoodViews>
         <RemoveNeutrons>false</RemoveNeutrons>
+    </algorithm-->
+
+    <algorithm type = "LArVisualParticleMonitoring">
+        <CaloHitListNames>CaloHitList2D</CaloHitListNames>
+        <MCParticleListNames>Input</MCParticleListNames>
+        <ShowPFOMatchedMC>true</ShowPFOMatchedMC>
+        <VisualizeMC>true</VisualizeMC>
+        <VisualizePFO>true</VisualizePFO>
     </algorithm>
  
-    <!--algorithm type = "LArVisualParticleMonitoring">
-        <ShowCurrentPfos>true</ShowCurrentPfos>
-        <ShowMC
-        <ShowDetector>true</ShowDetector>
-    </algorithm-->
 </pandora>
