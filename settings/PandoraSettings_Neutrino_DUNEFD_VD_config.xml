@@ -230,15 +230,6 @@
         <DaughterListNames>ClustersU ClustersV ClustersW</DaughterListNames>
     </algorithm>
 
-    <algorithm type = "LArCheatingPfoCreation">
-        <InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
-        <OutputPfoListName>TrackParticles3D</OutputPfoListName>
-        <AddVertices>false</AddVertices>
-        <CollapseToPrimaryMCParticles>false</CollapseToPrimaryMCParticles>
-        <MCParticleListName>Input</MCParticleListName>
-    </algorithm>
-
-    
     <!-- ThreeDHitAlgorithms -->
     <algorithm type = "LArCutPfoCharacterisation">
         <TrackPfoListName>TrackParticles3D</TrackPfoListName>
