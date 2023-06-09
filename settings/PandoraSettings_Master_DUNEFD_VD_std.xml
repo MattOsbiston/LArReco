@@ -58,9 +58,9 @@
         <Treename>vertices</Treename>
     </algorithm-->
 
-    <!--algorithm type = "LArHierarchyValidation">
+    <algorithm type = "LArHierarchyValidation">
         <ValidateMC>true</ValidateMC>
-        <WriteTree>true</WriteTree>
+        <WriteTree>false</WriteTree>
         <FileName>hierarchy_validation_std.root</FileName>
         <TreeName>mc</TreeName>
         <FoldToPrimaries>true</FoldToPrimaries>
@@ -68,7 +68,7 @@
         <MinHitsForGoodView>1</MinHitsForGoodView>
         <MinGoodViews>2</MinGoodViews>
         <RemoveNeutrons>false</RemoveNeutrons>
-    </algorithm-->
+    </algorithm>
 
     <algorithm type = "LArVisualParticleMonitoring">
         <CaloHitListNames>CaloHitList2D</CaloHitListNames>
