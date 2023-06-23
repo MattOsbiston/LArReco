@@ -111,6 +111,14 @@
         <InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
     </algorithm>
 
+    <algorithm type = "LArCheatingPfoCreation">
+        <InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
+        <OutputPfoListName>TrackParticles3D</OutputPfoListName>
+        <AddVertices>false</AddVertices>
+        <CollapseToPrimaryMCParticles>false</CollapseToPrimaryMCParticles>
+        <MCParticleListName>Input</MCParticleListName>
+    </algorithm>
+
     <!-- ThreeDTrackAlgorithms -->
     <!--algorithm type = "LArThreeDTransverseTracks">
         <InputClusterListNameU>ClustersU</InputClusterListNameU>
@@ -131,7 +139,7 @@
             <tool type = "LArMissingTrack"/>
         </TrackTools>
     </algorithm-->
-    <algorithm type = "LArThreeDLongitudinalTracks">
+    <!--algorithm type = "LArThreeDLongitudinalTracks">
         <InputClusterListNameU>ClustersU</InputClusterListNameU>
         <InputClusterListNameV>ClustersV</InputClusterListNameV>
         <InputClusterListNameW>ClustersW</InputClusterListNameW>
@@ -140,7 +148,7 @@
             <tool type = "LArClearLongitudinalTracks"/>
             <tool type = "LArMatchedEndPoints"/>
         </TrackTools>
-    </algorithm>
+    </algorithm-->
     <!--algorithm type = "LArThreeDTrackFragments">
         <MinClusterLength>5.</MinClusterLength>
         <InputClusterListNameU>ClustersU</InputClusterListNameU>

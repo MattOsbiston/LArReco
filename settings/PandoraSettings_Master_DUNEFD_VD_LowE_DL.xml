@@ -53,14 +53,14 @@
 
     <algorithm type = "LArVertexMonitoring">
         <Visualize>false</Visualize>
-        <WriteFile>true</WriteFile>
+        <WriteFile>false</WriteFile>
         <Filename>vertices_LowE_DL.root</Filename>
         <Treename>vertices</Treename>
     </algorithm>   
   
     <algorithm type = "LArHierarchyValidation">
         <ValidateMC>true</ValidateMC>
-        <WriteTree>true</WriteTree>
+        <WriteTree>false</WriteTree>
         <FileName>hierarchy_validation_LowE_DL.root</FileName>
         <TreeName>mc</TreeName>
         <FoldToPrimaries>true</FoldToPrimaries>
@@ -70,9 +70,12 @@
         <RemoveNeutrons>false</RemoveNeutrons>
     </algorithm>
  
+    <algorithm type = "LArVisualParticleMonitoring">
+        <CaloHitListNames>CaloHitList2D</CaloHitListNames>
+        <MCParticleListNames>Input</MCParticleListNames>
+        <ShowPFOMatchedMC>true</ShowPFOMatchedMC>
+        <VisualizeMC>true</VisualizeMC>
+        <VisualizePFO>true</VisualizePFO>
+    </algorithm>
 
-    <!--algorithm type = "LArVisualMonitoring">
-        <ShowCurrentPfos>true</ShowCurrentPfos>
-        <ShowDetector>true</ShowDetector>
-    </algorithm-->
 </pandora>
