@@ -17,9 +17,11 @@
         <TrainingMode>false</TrainingMode>
         <OutputVertexListName>NeutrinoVertices3D</OutputVertexListName>
         <CaloHitListNames>CaloHitListW CaloHitListU CaloHitListV</CaloHitListNames>
-        <ModelFileNameU>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_LowE_1_U_v2.pt</ModelFileNameU>
-        <ModelFileNameV>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_LowE_1_V_v2.pt</ModelFileNameV>
-        <ModelFileNameW>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_LowE_1_W_v2.pt</ModelFileNameW>
+        <ModelFileNameU>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_LowE_1_U_v5.pt</ModelFileNameU>
+        <ModelFileNameV>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_LowE_1_V_v5.pt</ModelFileNameV>
+        <ModelFileNameW>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_LowE_1_W_v5.pt</ModelFileNameW>
+        <ImageWidth>64</ImageWidth>
+        <ImageHeight>64</ImageHeight>
         <DistanceThresholds>0. 0.00325 0.00725 0.01625 0.01925 0.02225 0.02975 0.04575 0.06025 0.0825 0.1075 0.1325 0.1625 0.2075 0.32875 0.39125 0.47375 0.52625 0.85 1.0</DistanceThresholds>
         <Visualise>false</Visualise>
     </algorithm>
@@ -112,7 +114,7 @@
     </algorithm>
 
     <!-- ThreeDTrackAlgorithms -->
-    <algorithm type = "LArThreeDTransverseTracks">
+    <!--algorithm type = "LArThreeDTransverseTracks">
         <InputClusterListNameU>ClustersU</InputClusterListNameU>
         <InputClusterListNameV>ClustersV</InputClusterListNameV>
         <InputClusterListNameW>ClustersW</InputClusterListNameW>
@@ -130,7 +132,7 @@
             <tool type = "LArTracksCrossingGaps"><MinMatchedFraction>0.75</MinMatchedFraction><MinXOverlapFraction>0.75</MinXOverlapFraction></tool>
             <tool type = "LArMissingTrack"/>
         </TrackTools>
-    </algorithm>
+    </algorithm-->
     <algorithm type = "LArThreeDLongitudinalTracks">
         <InputClusterListNameU>ClustersU</InputClusterListNameU>
         <InputClusterListNameV>ClustersV</InputClusterListNameV>
@@ -141,7 +143,7 @@
             <tool type = "LArMatchedEndPoints"/>
         </TrackTools>
     </algorithm>
-    <algorithm type = "LArThreeDTrackFragments">
+    <!--algorithm type = "LArThreeDTrackFragments">
         <MinClusterLength>5.</MinClusterLength>
         <InputClusterListNameU>ClustersU</InputClusterListNameU>
         <InputClusterListNameV>ClustersV</InputClusterListNameV>
@@ -151,10 +153,10 @@
             <tool type = "LArClearTrackFragments"/>
         </TrackTools>
         <algorithm type = "LArSimpleClusterCreation" description = "ClusterRebuilding"/>
-    </algorithm>
+    </algorithm-->
 
     <!-- ThreeDShowerAlgorithms -->
-    <algorithm type = "LArCutPfoCharacterisation">
+    <!--algorithm type = "LArCutPfoCharacterisation">
         <TrackPfoListName>TrackParticles3D</TrackPfoListName>
         <ShowerPfoListName>ShowerParticles3D</ShowerPfoListName>
         <UseThreeDInformation>false</UseThreeDInformation>
@@ -185,10 +187,10 @@
             <tool type = "LArSplitShowers"/>
             <tool type = "LArSimpleShowers"/>
         </ShowerTools>
-    </algorithm>
+    </algorithm-->
 
     <!-- TwoViewTrackAlgorithms out-of-the-box for showers - U and V -->
-    <algorithm type = "LArTwoViewTransverseTracks">
+    <!--algorithm type = "LArTwoViewTransverseTracks">
         <InputClusterListName1>ClustersU</InputClusterListName1>
         <InputClusterListName2>ClustersV</InputClusterListName2>
         <OutputPfoListName>ShowerParticles3D</OutputPfoListName>
@@ -214,10 +216,10 @@
             </tool>
             <tool type = "LArTwoViewSimpleTracks"/>
         </TrackTools>
-    </algorithm>
+    </algorithm-->
 
     <!-- TwoViewTrackAlgorithms out-of-the-box for showers - U and W -->
-    <algorithm type = "LArTwoViewTransverseTracks">
+    <!--algorithm type = "LArTwoViewTransverseTracks">
         <InputClusterListName1>ClustersU</InputClusterListName1>
         <InputClusterListName2>ClustersW</InputClusterListName2>
         <OutputPfoListName>ShowerParticles3D</OutputPfoListName>
@@ -243,10 +245,10 @@
             </tool>
             <tool type = "LArTwoViewSimpleTracks"/>
         </TrackTools>
-    </algorithm>
+    </algorithm-->
 
     <!-- TwoViewTrackAlgorithms out-of-the-box for showers - V and W -->
-    <algorithm type = "LArTwoViewTransverseTracks">
+    <!--algorithm type = "LArTwoViewTransverseTracks">
         <InputClusterListName1>ClustersV</InputClusterListName1>
         <InputClusterListName2>ClustersW</InputClusterListName2>
         <OutputPfoListName>ShowerParticles3D</OutputPfoListName>
@@ -272,10 +274,10 @@
             </tool>
             <tool type = "LArTwoViewSimpleTracks"/>
         </TrackTools>
-    </algorithm>
+    </algorithm-->
 
     <!-- Repeat ThreeDTrackAlgorithms -->
-    <algorithm type = "LArThreeDTransverseTracks">
+    <!--algorithm type = "LArThreeDTransverseTracks">
         <InputClusterListNameU>ClustersU</InputClusterListNameU>
         <InputClusterListNameV>ClustersV</InputClusterListNameV>
         <InputClusterListNameW>ClustersW</InputClusterListNameW>
@@ -314,10 +316,10 @@
             <tool type = "LArClearTrackFragments"/>
         </TrackTools>
         <algorithm type = "LArSimpleClusterCreation" description = "ClusterRebuilding"/>
-    </algorithm>
+    </algorithm-->
 
     <!-- TwoViewTrackAlgorithms for U and V -->
-    <algorithm type = "LArTwoViewTransverseTracks">
+    <!--algorithm type = "LArTwoViewTransverseTracks">
         <InputClusterListName1>ClustersU</InputClusterListName1>
         <InputClusterListName2>ClustersV</InputClusterListName2>
         <OutputPfoListName>TrackParticles3D</OutputPfoListName>
@@ -341,10 +343,10 @@
             </tool>
             <tool type = "LArTwoViewSimpleTracks"/>
         </TrackTools>
-    </algorithm>
+    </algorithm-->
 
     <!-- TwoViewTrackAlgorithms for U and W -->
-    <algorithm type = "LArTwoViewTransverseTracks">
+    <!--algorithm type = "LArTwoViewTransverseTracks">
         <InputClusterListName1>ClustersU</InputClusterListName1>
         <InputClusterListName2>ClustersW</InputClusterListName2>
         <OutputPfoListName>TrackParticles3D</OutputPfoListName>
@@ -368,10 +370,10 @@
             </tool>
             <tool type = "LArTwoViewSimpleTracks"/>
         </TrackTools>
-    </algorithm>
+    </algorithm-->
 
     <!-- TwoViewTrackAlgorithms for V and W -->
-    <algorithm type = "LArTwoViewTransverseTracks">
+    <!--algorithm type = "LArTwoViewTransverseTracks">
         <InputClusterListName1>ClustersV</InputClusterListName1>
         <InputClusterListName2>ClustersW</InputClusterListName2>
         <OutputPfoListName>TrackParticles3D</OutputPfoListName>
@@ -395,7 +397,7 @@
             </tool>
             <tool type = "LArTwoViewSimpleTracks"/>
         </TrackTools>
-    </algorithm>
+    </algorithm-->
 
     <!-- ThreeDRecoveryAlgorithms -->
     <algorithm type = "LArVertexBasedPfoRecovery">
