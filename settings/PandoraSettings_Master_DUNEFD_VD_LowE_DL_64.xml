@@ -29,7 +29,7 @@
 
     <algorithm type = "LArDLMaster">
         <CRSettingsFile>PandoraSettings_Cosmic_DUNEFD_VD.xml</CRSettingsFile>
-        <NuSettingsFile>PandoraSettings_Neutrino_DUNEFD_VD_LowE_DL.xml</NuSettingsFile>
+        <NuSettingsFile>PandoraSettings_Neutrino_DUNEFD_VD_LowE_DL_64.xml</NuSettingsFile>
         <SlicingSettingsFile>PandoraSettings_Slicing_Standard.xml</SlicingSettingsFile>
         <StitchingTools>
             <tool type = "LArStitchingCosmicRayMerging"><ThreeDStitchingMode>true</ThreeDStitchingMode></tool>
@@ -51,12 +51,12 @@
         <LArCaloHitVersion>2</LArCaloHitVersion>
     </algorithm>
 
-    <!--algorithm type = "LArVertexMonitoring">
+    <algorithm type = "LArVertexMonitoring">
         <Visualize>false</Visualize>
         <WriteFile>true</WriteFile>
         <Filename>vertices_LowE_DL.root</Filename>
         <Treename>vertices</Treename>
-    </algorithm-->   
+    </algorithm>   
   
     <algorithm type = "LArHierarchyValidation">
         <ValidateMC>true</ValidateMC>

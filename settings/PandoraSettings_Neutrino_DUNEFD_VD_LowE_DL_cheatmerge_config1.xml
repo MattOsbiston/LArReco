@@ -111,8 +111,17 @@
         <InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
     </algorithm>
 
+    <!-- CheatingClusterMergingAlgorithm-->
+    <algorithm type = "LArCheatingClusterMerging">
+        <InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
+        <MCParticleListName>Input</MCParticleListName>
+        <MaxClusterFraction>0.05</MaxClusterFraction>
+        <MinNCaloHits>1</MinNCaloHits> 
+   </algorithm>
+
+   
     <!-- ThreeDTrackAlgorithms -->
-    <algorithm type = "LArThreeDTransverseTracks">
+    <!--algorithm type = "LArThreeDTransverseTracks">
         <InputClusterListNameU>ClustersU</InputClusterListNameU>
         <InputClusterListNameV>ClustersV</InputClusterListNameV>
         <InputClusterListNameW>ClustersW</InputClusterListNameW>
@@ -130,7 +139,7 @@
             <tool type = "LArTracksCrossingGaps"><MinMatchedFraction>0.75</MinMatchedFraction><MinXOverlapFraction>0.75</MinXOverlapFraction></tool>
             <tool type = "LArMissingTrack"/>
         </TrackTools>
-    </algorithm>
+    </algorithm-->
     <algorithm type = "LArThreeDLongitudinalTracks">
         <InputClusterListNameU>ClustersU</InputClusterListNameU>
         <InputClusterListNameV>ClustersV</InputClusterListNameV>
@@ -141,8 +150,8 @@
             <tool type = "LArMatchedEndPoints"/>
         </TrackTools>
     </algorithm>
-    <algorithm type = "LArThreeDTrackFragments">
-        <MinClusterLength>2</MinClusterLength>
+    <!--algorithm type = "LArThreeDTrackFragments">
+        <MinClusterLength>5.</MinClusterLength>
         <InputClusterListNameU>ClustersU</InputClusterListNameU>
         <InputClusterListNameV>ClustersV</InputClusterListNameV>
         <InputClusterListNameW>ClustersW</InputClusterListNameW>
@@ -151,7 +160,7 @@
             <tool type = "LArClearTrackFragments"/>
         </TrackTools>
         <algorithm type = "LArSimpleClusterCreation" description = "ClusterRebuilding"/>
-    </algorithm>
+    </algorithm-->
 
     <!-- ThreeDShowerAlgorithms -->
     <!--algorithm type = "LArCutPfoCharacterisation">
