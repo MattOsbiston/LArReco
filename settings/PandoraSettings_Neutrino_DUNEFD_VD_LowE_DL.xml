@@ -61,6 +61,14 @@
         <algorithm type = "LArSimpleClusterCreation" description = "ClusterRebuilding"/>
     </algorithm>
     <algorithm type = "LArHitWidthClusterMerging"/>
+    
+    <algorithm type = "LArTopologyCalorimetryMonitoring">
+        <InputClusterListNames>ClustersU</InputClusterListNames>
+        <MCParticleListName>Input</MCParticleListName>
+        <WriteTree>true</WriteTree>
+        <TreeName>mc</TreeName>
+        <FileName>TopologyCalorimetry_LowE_DL.root</FileName>
+    </algorithm>
 
     <algorithm type = "LArClusteringParent">
         <algorithm type = "LArTrackClusterCreation" description = "ClusterFormation"/>
