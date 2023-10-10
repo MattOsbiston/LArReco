@@ -16,6 +16,7 @@
         <FilteredCaloHitListName>CaloHitList2D</FilteredCaloHitListName>
         <CurrentCaloHitListReplacement>CaloHitList2D</CurrentCaloHitListReplacement>
     </algorithm>
+    
     <!--algorithm type = "LArVisualMonitoring">
         <CaloHitListNames>CaloHitListU CaloHitListV CaloHitListW</CaloHitListNames>
         <ShowDetector>true</ShowDetector>
@@ -29,7 +30,7 @@
 
     <algorithm type = "LArDLMaster">
         <CRSettingsFile>PandoraSettings_Cosmic_DUNEFD_VD.xml</CRSettingsFile>
-        <NuSettingsFile>PandoraSettings_Neutrino_DUNEFD_VD_stdDL.xml</NuSettingsFile>
+        <NuSettingsFile>PandoraSettings_Neutrino_DUNEFD_VD_LowE_DL_cheatmerge_config9.xml</NuSettingsFile>
         <SlicingSettingsFile>PandoraSettings_Slicing_Standard.xml</SlicingSettingsFile>
         <StitchingTools>
             <tool type = "LArStitchingCosmicRayMerging"><ThreeDStitchingMode>true</ThreeDStitchingMode></tool>
@@ -51,10 +52,17 @@
         <LArCaloHitVersion>2</LArCaloHitVersion>
     </algorithm>
 
-     <algorithm type = "LArHierarchyValidation">
+    <algorithm type = "LArVertexMonitoring">
+        <Visualize>false</Visualize>
+        <WriteFile>false</WriteFile>
+        <Filename>vertices_LowE_DL.root</Filename>
+        <Treename>vertices</Treename>
+    </algorithm>   
+  
+    <algorithm type = "LArHierarchyValidation">
         <ValidateMC>true</ValidateMC>
         <WriteTree>true</WriteTree>
-        <FileName>hierarchy_validation_stdDL.root</FileName>
+        <FileName>hierarchy_validation_clustermerge.root</FileName>
         <TreeName>mc</TreeName>
         <FoldToPrimaries>true</FoldToPrimaries>
         <MinHits>3</MinHits>
@@ -63,9 +71,12 @@
         <RemoveNeutrons>false</RemoveNeutrons>
     </algorithm>
  
-
-    <!--algorithm type = "LArVisualMonitoring">
-        <ShowCurrentPfos>true</ShowCurrentPfos>
-        <ShowDetector>true</ShowDetector>
+    <!--algorithm type = "LArVisualParticleMonitoring">
+        <CaloHitListNames>CaloHitList2D</CaloHitListNames>
+        <MCParticleListNames>Input</MCParticleListNames>
+        <ShowPFOMatchedMC>true</ShowPFOMatchedMC>
+        <VisualizeMC>true</VisualizeMC>
+        <VisualizePFO>true</VisualizePFO>
     </algorithm-->
+
 </pandora>
