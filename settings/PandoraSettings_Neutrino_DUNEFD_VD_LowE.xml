@@ -111,9 +111,21 @@
         <InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
     </algorithm>
 
-     <!-- BdtLowEClusterMergingAlgorithm -->
-     <algorithm type = "LArBdtLowEClusterMerging">
+    <!--algorithm type = "LArVisualMonitoring">
+        <CaloHitListNames>CaloHitListU CaloHitListV CaloHitListW</CaloHitListNames>
+        <ClusterListNames>ClustersU ClustersV ClustersW</ClusterListNames>
+        <ShowCurrentMCParticles>true</ShowCurrentMCParticles>
+        <ShowCurrentTracks>true</ShowCurrentTracks>
+        <ShowCurrentClusters>true</ShowCurrentClusters>
+        <ShowCurrentVertices>true</ShowCurrentVertices>
+        <ShowDetector>true</ShowDetector>
+        <DisplayEvent>true</DisplayEvent>
+    </algorithm-->
+
+    <!-- BdtLowEClusterMergingAlgorithm -->
+    <algorithm type = "LArBdtLowEClusterMerging">
         <MCParticleListName>Input</MCParticleListName>
+	<VertexListName>NeutrinoVertices3D</VertexListName>     
 	<CaloHitListName>CaloHitList2D</CaloHitListName>
 	<InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
 	<EnableProbability>true</EnableProbability>
@@ -129,12 +141,16 @@
 	<UpperHitThreshold>4</UpperHitThreshold>
 	<MinNCaloHits>1</MinNCaloHits>
 	<CountHitsThreshold>0</CountHitsThreshold>
-    </algorithm>
+	<ContactThreshold>2</ContactThreshold>
+	<ProximityThreshold>5</ProximityThreshold>
+	<EdgeHitToolDivisions>8</EdgeHitToolDivisions>
+     </algorithm>
 
-    <!-- BdtLowEClusterMergingAlgorithm -->
+     <!-- BdtLowEClusterMergingAlgorithm -->
      <algorithm type = "LArBdtLowEClusterMerging">
         <MCParticleListName>Input</MCParticleListName>
-        <CaloHitListName>CaloHitList2D</CaloHitListName>
+        <VertexListName>NeutrinoVertices3D</VertexListName>
+	<CaloHitListName>CaloHitList2D</CaloHitListName>
         <InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
         <EnableProbability>true</EnableProbability>
         <MinProbabilityCut>0.475f</MinProbabilityCut>
@@ -149,6 +165,9 @@
         <UpperHitThreshold>100</UpperHitThreshold>
 	<MinNCaloHits>4</MinNCaloHits>
 	<CountHitsThreshold>0</CountHitsThreshold>
+	<ContactThreshold>2</ContactThreshold>
+        <ProximityThreshold>5</ProximityThreshold>
+        <EdgeHitToolDivisions>8</EdgeHitToolDivisions>
     </algorithm>
 
     <!-- ThreeDTrackAlgorithms -->
@@ -274,6 +293,17 @@
         <DaughterListNames>ClustersU ClustersV ClustersW</DaughterListNames>
         <AddHitsAsIsolated>true</AddHitsAsIsolated>
     </algorithm>
+
+    <!--algorithm type = "LArVisualMonitoring">
+        <CaloHitListNames>CaloHitListU CaloHitListV CaloHitListW</CaloHitListNames>
+        <ClusterListNames>ClustersU ClustersV ClustersW</ClusterListNames>
+        <ShowCurrentMCParticles>true</ShowCurrentMCParticles>
+        <ShowCurrentTracks>true</ShowCurrentTracks>
+        <ShowCurrentClusters>true</ShowCurrentClusters>
+        <ShowCurrentVertices>true</ShowCurrentVertices>
+        <ShowDetector>true</ShowDetector>
+        <DisplayEvent>true</DisplayEvent>
+    </algorithm-->
 
     <algorithm type = "LArBdtPfoCharacterisation">
         <TrackPfoListName>TrackParticles3D</TrackPfoListName>
