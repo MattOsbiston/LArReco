@@ -13,10 +13,23 @@
         <CurrentCaloHitListReplacement>CaloHitList2D</CurrentCaloHitListReplacement>
     </algorithm>
 
+    <algorithm type = "LArDLSignal">
+        <TrainingMode>false</TrainingMode>
+	<CaloHitListNames>CaloHitListW CaloHitListU CaloHitListV</CaloHitListNames>
+	<SignalListNameU>SCaloHitListU</SignalListNameU>
+	<SignalListNameV>SCaloHitListV</SignalListNameV>
+	<SignalListNameW>SCaloHitListW</SignalListNameW>
+	<SignalListName2D>SCaloHitList2D</SignalListName2D>
+        <ModelFileNameU>PandoraNetworkData/PandoraUnet_backgrounds_1_U.pt</ModelFileNameU>
+	<ModelFileNameV>PandoraNetworkData/PandoraUnet_backgrounds_1_V.pt</ModelFileNameV>
+        <ModelFileNameW>PandoraNetworkData/PandoraUnet_backgrounds_1_W.pt</ModelFileNameW>
+        <Visualise>false</Visualise>
+    </algorithm>
+
     <algorithm type = "LArDLVertexing">
         <TrainingMode>false</TrainingMode>
         <OutputVertexListName>NeutrinoVertices3D_Pass1</OutputVertexListName>
-        <CaloHitListNames>CaloHitListW CaloHitListU CaloHitListV</CaloHitListNames>
+        <CaloHitListNames>SCaloHitListW SCaloHitListU SCaloHitListV</CaloHitListNames>
         <ModelFileNameU>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_LowE_1_U.pt</ModelFileNameU>
         <ModelFileNameV>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_LowE_1_V.pt</ModelFileNameV>
         <ModelFileNameW>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_LowE_1_W.pt</ModelFileNameW>
@@ -29,7 +42,7 @@
         <Pass>2</Pass>
         <InputVertexListName>NeutrinoVertices3D_Pass1</InputVertexListName>
         <OutputVertexListName>NeutrinoVertices3D</OutputVertexListName>
-        <CaloHitListNames>CaloHitListW CaloHitListU CaloHitListV</CaloHitListNames>
+        <CaloHitListNames>SCaloHitListW SCaloHitListU SCaloHitListV</CaloHitListNames>
         <ModelFileNameU>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_LowE_2_U.pt</ModelFileNameU>
         <ModelFileNameV>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_LowE_2_V.pt</ModelFileNameV>
         <ModelFileNameW>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_LowE_2_W.pt</ModelFileNameW>
@@ -42,7 +55,7 @@
     <!-- TwoDReconstruction -->
     <algorithm type = "LArClusteringParent">
         <algorithm type = "LArTrackClusterCreation" description = "ClusterFormation"/>
-        <InputCaloHitListName>CaloHitListU</InputCaloHitListName>
+        <InputCaloHitListName>SCaloHitListU</InputCaloHitListName>
         <ClusterListName>ClustersU</ClusterListName>
         <ReplaceCurrentCaloHitList>true</ReplaceCurrentCaloHitList>
         <ReplaceCurrentClusterList>true</ReplaceCurrentClusterList>
@@ -64,7 +77,7 @@
 
     <algorithm type = "LArClusteringParent">
         <algorithm type = "LArTrackClusterCreation" description = "ClusterFormation"/>
-        <InputCaloHitListName>CaloHitListV</InputCaloHitListName>
+        <InputCaloHitListName>SCaloHitListV</InputCaloHitListName>
         <ClusterListName>ClustersV</ClusterListName>
         <ReplaceCurrentCaloHitList>true</ReplaceCurrentCaloHitList>
         <ReplaceCurrentClusterList>true</ReplaceCurrentClusterList>
@@ -86,7 +99,7 @@
 
     <algorithm type = "LArClusteringParent">
         <algorithm type = "LArTrackClusterCreation" description = "ClusterFormation"/>
-        <InputCaloHitListName>CaloHitListW</InputCaloHitListName>
+        <InputCaloHitListName>SCaloHitListW</InputCaloHitListName>
         <ClusterListName>ClustersW</ClusterListName>
         <ReplaceCurrentCaloHitList>true</ReplaceCurrentCaloHitList>
         <ReplaceCurrentClusterList>true</ReplaceCurrentClusterList>
@@ -112,10 +125,10 @@
     </algorithm>
 
     <!--algorithm type = "LArVisualMonitoring">
-        <CaloHitListNames>CaloHitListU CaloHitListV CaloHitListW</CaloHitListNames>
+        <CaloHitListNames>SCaloHitListU SCaloHitListV SCaloHitListW</CaloHitListNames>
         <ClusterListNames>ClustersU ClustersV ClustersW</ClusterListNames>
-        <ShowCurrentMCParticles>true</ShowCurrentMCParticles>
-        <ShowCurrentTracks>true</ShowCurrentTracks>
+        <ShowCurrentMCParticles>false</ShowCurrentMCParticles>
+        <ShowCurrentTracks>false</ShowCurrentTracks>
         <ShowCurrentClusters>true</ShowCurrentClusters>
         <ShowCurrentVertices>true</ShowCurrentVertices>
         <ShowDetector>true</ShowDetector>
@@ -126,7 +139,7 @@
     <algorithm type = "LArBdtLowEClusterMerging">
         <MCParticleListName>Input</MCParticleListName>
 	<VertexListName>NeutrinoVertices3D</VertexListName>     
-	<CaloHitListName>CaloHitList2D</CaloHitListName>
+	<CaloHitListName>SCaloHitList2D</CaloHitListName>
 	<InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
 	<EnableProbability>true</EnableProbability>
 	<MinProbabilityCut>0.475f</MinProbabilityCut>
@@ -150,7 +163,7 @@
      <algorithm type = "LArBdtLowEClusterMerging">
         <MCParticleListName>Input</MCParticleListName>
         <VertexListName>NeutrinoVertices3D</VertexListName>
-	<CaloHitListName>CaloHitList2D</CaloHitListName>
+	<CaloHitListName>SCaloHitList2D</CaloHitListName>
         <InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
         <EnableProbability>true</EnableProbability>
         <MinProbabilityCut>0.475f</MinProbabilityCut>
@@ -170,6 +183,18 @@
         <EdgeHitToolDivisions>8</EdgeHitToolDivisions>
     </algorithm>
 
+    <!--algorithm type = "LArVisualMonitoring">
+        <CaloHitListNames>SCaloHitListU SCaloHitListV SCaloHitListW</CaloHitListNames>
+        <ClusterListNames>ClustersU ClustersV ClustersW</ClusterListNames>
+        <ShowCurrentMCParticles>false</ShowCurrentMCParticles>
+        <ShowCurrentTracks>false</ShowCurrentTracks>
+        <ShowCurrentClusters>true</ShowCurrentClusters>
+        <ShowCurrentVertices>true</ShowCurrentVertices>
+        <ShowDetector>true</ShowDetector>
+        <DisplayEvent>true</DisplayEvent>
+    </algorithm-->
+
+    
     <!-- ThreeDTrackAlgorithms -->
     <algorithm type = "LArThreeDTransverseTracks">
         <InputClusterListNameU>ClustersU</InputClusterListNameU>
@@ -295,7 +320,7 @@
     </algorithm>
 
     <!--algorithm type = "LArVisualMonitoring">
-        <CaloHitListNames>CaloHitListU CaloHitListV CaloHitListW</CaloHitListNames>
+        <CaloHitListNames>SCaloHitListU SCaloHitListV SCaloHitListW</CaloHitListNames>
         <ClusterListNames>ClustersU ClustersV ClustersW</ClusterListNames>
         <ShowCurrentMCParticles>true</ShowCurrentMCParticles>
         <ShowCurrentTracks>true</ShowCurrentTracks>
@@ -309,7 +334,7 @@
         <TrackPfoListName>TrackParticles3D</TrackPfoListName>
         <ShowerPfoListName>ShowerParticles3D</ShowerPfoListName>
         <MCParticleListName>Input</MCParticleListName>
-        <CaloHitListName>CaloHitList2D</CaloHitListName>
+        <CaloHitListName>SCaloHitList2D</CaloHitListName>
         <UseThreeDInformation>true</UseThreeDInformation>
         <MvaFileName>PandoraMVAData/PandoraBdt_PfoCharacterisation_DUNEFD_v03_26_00.xml</MvaFileName>
         <MvaName>PfoCharacterisation</MvaName>
@@ -421,7 +446,7 @@
         <TrackPfoListName>TrackParticles3D</TrackPfoListName>
         <ShowerPfoListName>ShowerParticles3D</ShowerPfoListName>
         <MCParticleListName>Input</MCParticleListName>
-        <CaloHitListName>CaloHitList2D</CaloHitListName>
+        <CaloHitListName>SCaloHitList2D</CaloHitListName>
         <UseThreeDInformation>true</UseThreeDInformation>
         <MvaFileName>PandoraMVAData/PandoraBdt_PfoCharacterisation_DUNEFD_v03_26_00.xml</MvaFileName>
         <MvaName>PfoCharacterisation</MvaName>
@@ -473,7 +498,7 @@
         <PfoListNames>NeutrinoParticles3D TrackParticles3D ShowerParticles3D</PfoListNames>
         <VertexListNames>NeutrinoVertices3D DaughterVertices3D CandidateVertices3D</VertexListNames>
         <ClusterListNames>ClustersU ClustersV ClustersW TrackClusters3D ShowerClusters3D</ClusterListNames>
-        <CaloHitListNames>CaloHitListU CaloHitListV CaloHitListW CaloHitList2D</CaloHitListNames>
+        <CaloHitListNames>SCaloHitListU SCaloHitListV SCaloHitListW SCaloHitList2D</CaloHitListNames>
         <CurrentPfoListReplacement>NeutrinoParticles3D</CurrentPfoListReplacement>
     </algorithm>
 </pandora>
