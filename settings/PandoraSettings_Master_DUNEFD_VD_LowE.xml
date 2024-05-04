@@ -47,17 +47,35 @@
         <LArCaloHitVersion>2</LArCaloHitVersion>
     </algorithm>
 
-    <algorithm type = "LArHierarchyValidation">
+    <!--algorithm type = "LArVisualMonitoring">
+        <CaloHitListNames>CaloHitListU CaloHitListV CaloHitListW</CaloHitListNames>
+        <ShowDetector>true</ShowDetector>
+        <DisplayEvent>true</DisplayEvent>
+    </algorithm-->
+
+
+    <!--algorithm type = "LArVisualParticleMonitoring">
+        <CaloHitListNames>CaloHitList2D</CaloHitListNames>
+        <MCParticleListNames>Input</MCParticleListNames>
+	<ShowPFOMatchedMC>true</ShowPFOMatchedMC>
+        <VisualizeMC>false</VisualizeMC>
+        <VisualizePFO>true</VisualizePFO>
+    </algorithm-->
+
+
+    <!--algorithm type = "LArHierarchyValidation">
+        <CaloHitListName>CaloHitList2D</CaloHitListName>
+        <PfoListName>RecreatedPfos</PfoListName>
         <ValidateMC>true</ValidateMC>
 	<WriteTree>true</WriteTree>
         <FileName>hierarchy_validation_background.root</FileName>
         <TreeName>mc</TreeName>
-	<FoldToPrimaries>true</FoldToPrimaries>
+        <FoldToPrimaries>true</FoldToPrimaries>
         <RemoveNeutrons>false</RemoveNeutrons>
-        <MinPurity>0.5</MinPurity>
-        <MinCompleteness>0.5</MinCompleteness>
+        <MinPurity>0</MinPurity>
+        <MinCompleteness>0</MinCompleteness>
         <MinHits>3</MinHits>
-	<MinHitsForGoodView>1</MinHitsForGoodView>
-    </algorithm>
- 
+        <MinHitsForGoodView>1</MinHitsForGoodView>
+    </algorithm-->
+
 </pandora>

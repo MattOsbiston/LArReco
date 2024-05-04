@@ -6,30 +6,91 @@
 
     <!-- ALGORITHM SETTINGS -->
     <algorithm type = "LArPreProcessing">
-        <OutputCaloHitListNameU>CaloHitListU</OutputCaloHitListNameU>
-        <OutputCaloHitListNameV>CaloHitListV</OutputCaloHitListNameV>
-        <OutputCaloHitListNameW>CaloHitListW</OutputCaloHitListNameW>
-        <FilteredCaloHitListName>CaloHitList2D</FilteredCaloHitListName>
-        <CurrentCaloHitListReplacement>CaloHitList2D</CurrentCaloHitListReplacement>
+	<OutputCaloHitListNameU>SSCaloHitListU</OutputCaloHitListNameU>
+	<OutputCaloHitListNameV>SSCaloHitListV</OutputCaloHitListNameV>
+	<OutputCaloHitListNameW>SSCaloHitListW</OutputCaloHitListNameW>
+        <FilteredCaloHitListName>SSCaloHitList2D</FilteredCaloHitListName>
+        <CurrentCaloHitListReplacement>SSCaloHitList2D</CurrentCaloHitListReplacement>
     </algorithm>
+
+    <algorithm type = "LArMCParticleMonitoring">
+       <MCParticleListName>Input</MCParticleListName>
+       <CaloHitListName>SSCaloHitList2D</CaloHitListName>
+       <UseTrueNeutrinosOnly>true</UseTrueNeutrinosOnly>
+       <MinHitsForDisplay>5</MinHitsForDisplay>
+       <MinPrimaryGoodHits>5</MinPrimaryGoodHits>
+       <MinHitsForGoodView>2</MinHitsForGoodView>
+    </algorithm>
+
+    <!--algorithm type = "LArVisualMonitoring">
+        <CaloHitListNames>SSCaloHitListU SSCaloHitListV SSCaloHitListW</CaloHitListNames>
+        <ShowDetector>true</ShowDetector>
+        <DisplayEvent>true</DisplayEvent>
+    </algorithm-->
+
 
     <algorithm type = "LArDLSignal">
         <TrainingMode>false</TrainingMode>
-	<CaloHitListNames>CaloHitListW CaloHitListU CaloHitListV</CaloHitListNames>
+	<PrintOut>false</PrintOut>
+	<ApplyCheatedSeparation>false</ApplyCheatedSeparation>
+	<CaloHitListNames>SSCaloHitListW SSCaloHitListU SSCaloHitListV</CaloHitListNames>
+	<CaloHitListName2D>SSCaloHitList2D</CaloHitListName2D>
+	<InputCaloHitListNames>SSCaloHitListW SSCaloHitListU SSCaloHitListV</InputCaloHitListNames>
 	<SignalListNameU>SCaloHitListU</SignalListNameU>
 	<SignalListNameV>SCaloHitListV</SignalListNameV>
 	<SignalListNameW>SCaloHitListW</SignalListNameW>
 	<SignalListName2D>SCaloHitList2D</SignalListName2D>
-        <ModelFileNameU>PandoraNetworkData/PandoraUnet_backgrounds_1_U.pt</ModelFileNameU>
-	<ModelFileNameV>PandoraNetworkData/PandoraUnet_backgrounds_1_V.pt</ModelFileNameV>
-        <ModelFileNameW>PandoraNetworkData/PandoraUnet_backgrounds_1_W.pt</ModelFileNameW>
+	<BackgroundListName>BBCaloHitList</BackgroundListName>
+        <ModelFileNameU>PandoraNetworkData/PandoraUnet_backgrounds_newv2_1_U.pt</ModelFileNameU>
+	<ModelFileNameV>PandoraNetworkData/PandoraUnet_backgrounds_newv2_1_V.pt</ModelFileNameV>
+	<ModelFileNameW>PandoraNetworkData/PandoraUnet_backgrounds_newv2_1_W.pt</ModelFileNameW>
         <Visualise>false</Visualise>
     </algorithm>
 
+    <algorithm type = "LArDLSignal">
+	<TrainingMode>false</TrainingMode>
+	<TrainingOutputFileName>DUNEFD_LowE_Backgrounds_Pass_2_photons</TrainingOutputFileName>
+	<PrintOut>false</PrintOut>
+        <Pass>2</Pass>
+	<ImageHeight>128</ImageHeight>
+	<ImageWidth>128</ImageWidth>
+        <CaloHitListNames>SSCaloHitListW SSCaloHitListU SSCaloHitListV</CaloHitListNames>
+        <CaloHitListName2D>SSCaloHitList2D</CaloHitListName2D>
+        <InputCaloHitListNames>SCaloHitListW SCaloHitListU SCaloHitListV</InputCaloHitListNames>
+        <SignalListNameU>CaloHitListU</SignalListNameU>
+        <SignalListNameV>CaloHitListV</SignalListNameV>
+        <SignalListNameW>CaloHitListW</SignalListNameW>
+	<SignalListName2D>CaloHitList2D</SignalListName2D>
+	<BackgroundListName>BCaloHitList</BackgroundListName>
+        <ModelFileNameU>PandoraNetworkData/PandoraUnet_backgrounds_photons_2_IP.pt</ModelFileNameU>
+        <ModelFileNameV>PandoraNetworkData/PandoraUnet_backgrounds_photons_2_IP.pt</ModelFileNameV>
+        <ModelFileNameW>PandoraNetworkData/PandoraUnet_backgrounds_photons_2_W.pt</ModelFileNameW>
+        <Visualise>false</Visualise>
+    </algorithm>
+
+    <!--algorithm type = "LArMCParticleMonitoring">
+       <MCParticleListName>Input</MCParticleListName>
+       <CaloHitListName>SSCaloHitList2D</CaloHitListName>
+       <UseTrueNeutrinosOnly>true</UseTrueNeutrinosOnly>
+       <MinHitsForDisplay>1</MinHitsForDisplay>
+       <MinPrimaryGoodHits>1</MinPrimaryGoodHits>
+       <MinHitsForGoodView>2</MinHitsForGoodView>
+    </algorithm-->
+
+    <!--algorithm type = "LArVisualMonitoring">
+       <CaloHitListNames>SCaloHitListW SCaloHitListU SCaloHitListV</CaloHitListNames>
+       <ShowDetector>true</ShowDetector>
+    </algorithm-->
+
+    <!--algorithm type = "LArVisualMonitoring">
+       <CaloHitListNames>CaloHitListW CaloHitListU CaloHitListV</CaloHitListNames>
+       <ShowDetector>true</ShowDetector>
+    </algorithm-->
+ 
     <algorithm type = "LArDLVertexing">
         <TrainingMode>false</TrainingMode>
         <OutputVertexListName>NeutrinoVertices3D_Pass1</OutputVertexListName>
-        <CaloHitListNames>SCaloHitListW SCaloHitListU SCaloHitListV</CaloHitListNames>
+        <CaloHitListNames>CaloHitListW CaloHitListU CaloHitListV</CaloHitListNames>
         <ModelFileNameU>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_LowE_1_U.pt</ModelFileNameU>
         <ModelFileNameV>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_LowE_1_V.pt</ModelFileNameV>
         <ModelFileNameW>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_LowE_1_W.pt</ModelFileNameW>
@@ -42,7 +103,7 @@
         <Pass>2</Pass>
         <InputVertexListName>NeutrinoVertices3D_Pass1</InputVertexListName>
         <OutputVertexListName>NeutrinoVertices3D</OutputVertexListName>
-        <CaloHitListNames>SCaloHitListW SCaloHitListU SCaloHitListV</CaloHitListNames>
+        <CaloHitListNames>CaloHitListW CaloHitListU CaloHitListV</CaloHitListNames>
         <ModelFileNameU>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_LowE_2_U.pt</ModelFileNameU>
         <ModelFileNameV>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_LowE_2_V.pt</ModelFileNameV>
         <ModelFileNameW>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_LowE_2_W.pt</ModelFileNameW>
@@ -55,7 +116,7 @@
     <!-- TwoDReconstruction -->
     <algorithm type = "LArClusteringParent">
         <algorithm type = "LArTrackClusterCreation" description = "ClusterFormation"/>
-        <InputCaloHitListName>SCaloHitListU</InputCaloHitListName>
+        <InputCaloHitListName>CaloHitListU</InputCaloHitListName>
         <ClusterListName>ClustersU</ClusterListName>
         <ReplaceCurrentCaloHitList>true</ReplaceCurrentCaloHitList>
         <ReplaceCurrentClusterList>true</ReplaceCurrentClusterList>
@@ -77,7 +138,7 @@
 
     <algorithm type = "LArClusteringParent">
         <algorithm type = "LArTrackClusterCreation" description = "ClusterFormation"/>
-        <InputCaloHitListName>SCaloHitListV</InputCaloHitListName>
+        <InputCaloHitListName>CaloHitListV</InputCaloHitListName>
         <ClusterListName>ClustersV</ClusterListName>
         <ReplaceCurrentCaloHitList>true</ReplaceCurrentCaloHitList>
         <ReplaceCurrentClusterList>true</ReplaceCurrentClusterList>
@@ -99,7 +160,7 @@
 
     <algorithm type = "LArClusteringParent">
         <algorithm type = "LArTrackClusterCreation" description = "ClusterFormation"/>
-        <InputCaloHitListName>SCaloHitListW</InputCaloHitListName>
+        <InputCaloHitListName>CaloHitListW</InputCaloHitListName>
         <ClusterListName>ClustersW</ClusterListName>
         <ReplaceCurrentCaloHitList>true</ReplaceCurrentCaloHitList>
         <ReplaceCurrentClusterList>true</ReplaceCurrentClusterList>
@@ -125,7 +186,13 @@
     </algorithm>
 
     <!--algorithm type = "LArVisualMonitoring">
-        <CaloHitListNames>SCaloHitListU SCaloHitListV SCaloHitListW</CaloHitListNames>
+       <ClusterListNames>ClustersU ClustersV ClustersW</ClusterListNames>
+       <ShowDetector>true</ShowDetector>
+    </algorithm-->
+
+
+    <!--algorithm type = "LArVisualMonitoring">
+        <CaloHitListNames>CaloHitListU CaloHitListV CaloHitListW</CaloHitListNames>
         <ClusterListNames>ClustersU ClustersV ClustersW</ClusterListNames>
         <ShowCurrentMCParticles>false</ShowCurrentMCParticles>
         <ShowCurrentTracks>false</ShowCurrentTracks>
@@ -138,13 +205,14 @@
     <!-- BdtLowEClusterMergingAlgorithm -->
     <algorithm type = "LArBdtLowEClusterMerging">
         <MCParticleListName>Input</MCParticleListName>
+	<PrintOut>false</PrintOut>
 	<VertexListName>NeutrinoVertices3D</VertexListName>     
-	<CaloHitListName>SCaloHitList2D</CaloHitListName>
+	<CaloHitListName>CaloHitList2D</CaloHitListName>
 	<InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
 	<EnableProbability>true</EnableProbability>
 	<MinProbabilityCut>0.475f</MinProbabilityCut>
 	<TrainingSetMode>false</TrainingSetMode>
-	<TrainingOutputFileName>LowEClusterMergingOutput.csv</TrainingOutputFileName>
+	<TrainingOutputFileName>LowEBackgroundClusterMergingOutputFixed.csv</TrainingOutputFileName>
 	<MvaFileName>PandoraMVAData/LowEClusterMergingv3.xml</MvaFileName>
         <MvaName>LowEClusterMerging</MvaName>
 	<WriteTree>false</WriteTree>
@@ -157,13 +225,15 @@
 	<ContactThreshold>2</ContactThreshold>
 	<ProximityThreshold>5</ProximityThreshold>
 	<EdgeHitToolDivisions>8</EdgeHitToolDivisions>
+	<SectorTolerance>0.2</SectorTolerance>
      </algorithm>
 
      <!-- BdtLowEClusterMergingAlgorithm -->
      <algorithm type = "LArBdtLowEClusterMerging">
         <MCParticleListName>Input</MCParticleListName>
-        <VertexListName>NeutrinoVertices3D</VertexListName>
-	<CaloHitListName>SCaloHitList2D</CaloHitListName>
+        <PrintOut>false</PrintOut>
+	<VertexListName>NeutrinoVertices3D</VertexListName>
+	<CaloHitListName>CaloHitList2D</CaloHitListName>
         <InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
         <EnableProbability>true</EnableProbability>
         <MinProbabilityCut>0.475f</MinProbabilityCut>
@@ -180,19 +250,36 @@
 	<CountHitsThreshold>0</CountHitsThreshold>
 	<ContactThreshold>2</ContactThreshold>
         <ProximityThreshold>5</ProximityThreshold>
-        <EdgeHitToolDivisions>8</EdgeHitToolDivisions>
+	<EdgeHitToolDivisions>8</EdgeHitToolDivisions>
+	<SectorTolerance>0.2</SectorTolerance>
     </algorithm>
 
     <!--algorithm type = "LArVisualMonitoring">
-        <CaloHitListNames>SCaloHitListU SCaloHitListV SCaloHitListW</CaloHitListNames>
+       <ClusterListNames>ClustersU ClustersV ClustersW</ClusterListNames>
+       <ShowDetector>true</ShowDetector>
+    </algorithm-->
+
+    <!--algorithm type = "LArVisualMonitoring">
+        <CaloHitListNames>CaloHitListU CaloHitListV CaloHitListW</CaloHitListNames>
         <ClusterListNames>ClustersU ClustersV ClustersW</ClusterListNames>
         <ShowCurrentMCParticles>false</ShowCurrentMCParticles>
         <ShowCurrentTracks>false</ShowCurrentTracks>
         <ShowCurrentClusters>true</ShowCurrentClusters>
-        <ShowCurrentVertices>true</ShowCurrentVertices>
+        <ShowCurrentVertices>false</ShowCurrentVertices>
         <ShowDetector>true</ShowDetector>
         <DisplayEvent>true</DisplayEvent>
     </algorithm-->
+     
+    <!--algorithm type = "LArCheatingPfoCreation">
+        <InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
+	<OutputPfoListName>NeutrinoParticles3D</OutputPfoListName>
+        <OutputVertexListName>NeutrinoVertices3D</OutputVertexListName>
+	<MCParticleListName>Input</MCParticleListName>
+	<AddVertices>false</AddVertices>
+	<CollapseToPrimaryMCParticles>true</CollapseToPrimaryMCParticles>
+	<NHitsForGoodHitType>1</NHitsForGoodHitType>
+    </algorithm-->
+
 
     
     <!-- ThreeDTrackAlgorithms -->
@@ -320,7 +407,7 @@
     </algorithm>
 
     <!--algorithm type = "LArVisualMonitoring">
-        <CaloHitListNames>SCaloHitListU SCaloHitListV SCaloHitListW</CaloHitListNames>
+        <CaloHitListNames>CaloHitListU CaloHitListV CaloHitListW</CaloHitListNames>
         <ClusterListNames>ClustersU ClustersV ClustersW</ClusterListNames>
         <ShowCurrentMCParticles>true</ShowCurrentMCParticles>
         <ShowCurrentTracks>true</ShowCurrentTracks>
@@ -334,7 +421,7 @@
         <TrackPfoListName>TrackParticles3D</TrackPfoListName>
         <ShowerPfoListName>ShowerParticles3D</ShowerPfoListName>
         <MCParticleListName>Input</MCParticleListName>
-        <CaloHitListName>SCaloHitList2D</CaloHitListName>
+        <CaloHitListName>CaloHitList2D</CaloHitListName>
         <UseThreeDInformation>true</UseThreeDInformation>
         <MvaFileName>PandoraMVAData/PandoraBdt_PfoCharacterisation_DUNEFD_v03_26_00.xml</MvaFileName>
         <MvaName>PfoCharacterisation</MvaName>
@@ -446,7 +533,7 @@
         <TrackPfoListName>TrackParticles3D</TrackPfoListName>
         <ShowerPfoListName>ShowerParticles3D</ShowerPfoListName>
         <MCParticleListName>Input</MCParticleListName>
-        <CaloHitListName>SCaloHitList2D</CaloHitListName>
+        <CaloHitListName>CaloHitList2D</CaloHitListName>
         <UseThreeDInformation>true</UseThreeDInformation>
         <MvaFileName>PandoraMVAData/PandoraBdt_PfoCharacterisation_DUNEFD_v03_26_00.xml</MvaFileName>
         <MvaName>PfoCharacterisation</MvaName>
@@ -492,13 +579,44 @@
         <PfoListName>TrackParticles3D</PfoListName>
         <VertexListName>DaughterVertices3D</VertexListName>
     </algorithm>
+  
+    <algorithm type = "LArHierarchyValidation">
+        <CaloHitListName>SSCaloHitList2D</CaloHitListName>
+        <PfoListName>NeutrinoParticles3D</PfoListName>
+        <ValidateMC>true</ValidateMC>
+	<WriteTree>false</WriteTree>
+        <FileName>hierarchy_validation_background.root</FileName>
+        <TreeName>mc</TreeName>
+        <FoldToPrimaries>true</FoldToPrimaries>
+        <RemoveNeutrons>false</RemoveNeutrons>
+        <MinPurity>0</MinPurity>
+        <MinCompleteness>0</MinCompleteness>
+        <MinHits>3</MinHits>
+        <MinHitsForGoodView>1</MinHitsForGoodView>
+    </algorithm>
+
+    <!--algorithm type = "LArVisualMonitoring">
+       <CaloHitListNames>CaloHitListU CaloHitListV CaloHitListW CaloHitList2D</CaloHitListNames>	    
+       <PfoListNames>NeutrinoParticles3D</PfoListNames>
+       <ShowDetector>true</ShowDetector>
+    </algorithm-->
+
+    <!--algorithm type = "LArVisualParticleMonitoring">
+        <CaloHitListNames>CaloHitList2D</CaloHitListNames>
+	<MCParticleListNames>Input</MCParticleListNames>
+        <ShowPFOMatchedMC>true</ShowPFOMatchedMC>
+        <VisualizeMC>true</VisualizeMC>
+        <VisualizePFO>true</VisualizePFO>
+    </algorithm-->
+
 
     <!-- Output list management -->
     <algorithm type = "LArPostProcessing">
         <PfoListNames>NeutrinoParticles3D TrackParticles3D ShowerParticles3D</PfoListNames>
         <VertexListNames>NeutrinoVertices3D DaughterVertices3D CandidateVertices3D</VertexListNames>
         <ClusterListNames>ClustersU ClustersV ClustersW TrackClusters3D ShowerClusters3D</ClusterListNames>
-        <CaloHitListNames>SCaloHitListU SCaloHitListV SCaloHitListW SCaloHitList2D</CaloHitListNames>
+        <CaloHitListNames>CaloHitListU CaloHitListV CaloHitListW CaloHitList2D</CaloHitListNames>
         <CurrentPfoListReplacement>NeutrinoParticles3D</CurrentPfoListReplacement>
     </algorithm>
+
 </pandora>
