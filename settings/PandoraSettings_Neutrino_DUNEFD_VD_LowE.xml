@@ -17,9 +17,9 @@
        <MCParticleListName>Input</MCParticleListName>
        <CaloHitListName>SSCaloHitList2D</CaloHitListName>
        <UseTrueNeutrinosOnly>true</UseTrueNeutrinosOnly>
-       <MinHitsForDisplay>5</MinHitsForDisplay>
-       <MinPrimaryGoodHits>5</MinPrimaryGoodHits>
-       <MinHitsForGoodView>2</MinHitsForGoodView>
+       <MinHitsForDisplay>1</MinHitsForDisplay>
+       <MinPrimaryGoodHits>1</MinPrimaryGoodHits>
+       <MinHitsForGoodView>1</MinHitsForGoodView>
     </algorithm>
 
     <!--algorithm type = "LArVisualMonitoring">
@@ -210,10 +210,10 @@
 	<CaloHitListName>CaloHitList2D</CaloHitListName>
 	<InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
 	<EnableProbability>true</EnableProbability>
-	<MinProbabilityCut>0.475f</MinProbabilityCut>
+	<MinProbabilityCut>0.55f</MinProbabilityCut>
 	<TrainingSetMode>false</TrainingSetMode>
 	<TrainingOutputFileName>LowEBackgroundClusterMergingOutputFixed.csv</TrainingOutputFileName>
-	<MvaFileName>PandoraMVAData/LowEClusterMergingv3.xml</MvaFileName>
+	<MvaFileName>PandoraMVAData/LowEBackgroundClusterMergingFixed.xml</MvaFileName>
         <MvaName>LowEClusterMerging</MvaName>
 	<WriteTree>false</WriteTree>
 	<TreeName>void</TreeName>
@@ -224,9 +224,10 @@
 	<CountHitsThreshold>0</CountHitsThreshold>
 	<ContactThreshold>2</ContactThreshold>
 	<ProximityThreshold>5</ProximityThreshold>
-	<EdgeHitToolDivisions>8</EdgeHitToolDivisions>
-	<SectorTolerance>0.2</SectorTolerance>
-     </algorithm>
+	<EdgeHitToolDivisions>16</EdgeHitToolDivisions>
+	<SectorTolerance>0.03</SectorTolerance>
+    </algorithm>
+    
 
      <!-- BdtLowEClusterMergingAlgorithm -->
      <algorithm type = "LArBdtLowEClusterMerging">
@@ -235,11 +236,11 @@
 	<VertexListName>NeutrinoVertices3D</VertexListName>
 	<CaloHitListName>CaloHitList2D</CaloHitListName>
         <InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
-        <EnableProbability>true</EnableProbability>
-        <MinProbabilityCut>0.475f</MinProbabilityCut>
+        <EnableProbability>false</EnableProbability>
+        <MinProbabilityCut>0.5f</MinProbabilityCut>
         <TrainingSetMode>false</TrainingSetMode>
         <TrainingOutputFileName>LowEClusterMergingOutput.csv</TrainingOutputFileName>
-        <MvaFileName>PandoraMVAData/LowEClusterMergingv3.xml</MvaFileName>
+        <MvaFileName>PandoraMVAData/LowEBackgroundClusterMergingFixed.xml</MvaFileName>
         <MvaName>LowEClusterMerging</MvaName>
         <WriteTree>false</WriteTree>
         <TreeName>void</TreeName>
@@ -250,8 +251,34 @@
 	<CountHitsThreshold>0</CountHitsThreshold>
 	<ContactThreshold>2</ContactThreshold>
         <ProximityThreshold>5</ProximityThreshold>
-	<EdgeHitToolDivisions>8</EdgeHitToolDivisions>
-	<SectorTolerance>0.2</SectorTolerance>
+	<EdgeHitToolDivisions>16</EdgeHitToolDivisions>
+	<SectorTolerance>0.03</SectorTolerance>
+    </algorithm>
+
+    <!-- BdtLowEClusterMergingAlgorithm -->
+     <algorithm type = "LArBdtLowEClusterMerging">
+        <MCParticleListName>Input</MCParticleListName>
+        <PrintOut>false</PrintOut>
+        <VertexListName>NeutrinoVertices3D</VertexListName>
+        <CaloHitListName>CaloHitList2D</CaloHitListName>
+        <InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
+        <EnableProbability>false</EnableProbability>
+	<MinProbabilityCut>0.4f</MinProbabilityCut>
+        <TrainingSetMode>false</TrainingSetMode>
+        <TrainingOutputFileName>LowEClusterMergingOutput.csv</TrainingOutputFileName>
+        <MvaFileName>PandoraMVAData/LowEBackgroundClusterMergingFixed.xml</MvaFileName>
+        <MvaName>LowEClusterMerging</MvaName>
+        <WriteTree>false</WriteTree>
+        <TreeName>void</TreeName>
+        <TreeName2>void</TreeName2>
+        <FileName>LowE.root</FileName>
+        <UpperHitThreshold>100</UpperHitThreshold>
+        <MinNCaloHits>2</MinNCaloHits>
+        <CountHitsThreshold>20</CountHitsThreshold>
+        <ContactThreshold>2</ContactThreshold>
+        <ProximityThreshold>5</ProximityThreshold>
+        <EdgeHitToolDivisions>16</EdgeHitToolDivisions>
+        <SectorTolerance>0.03</SectorTolerance>
     </algorithm>
 
     <!--algorithm type = "LArVisualMonitoring">
@@ -584,10 +611,10 @@
         <CaloHitListName>SSCaloHitList2D</CaloHitListName>
         <PfoListName>NeutrinoParticles3D</PfoListName>
         <ValidateMC>true</ValidateMC>
-	<WriteTree>false</WriteTree>
+	<WriteTree>true</WriteTree>
         <FileName>hierarchy_validation_background.root</FileName>
         <TreeName>mc</TreeName>
-        <FoldToPrimaries>true</FoldToPrimaries>
+	<FoldToPrimaries>true</FoldToPrimaries>
         <RemoveNeutrons>false</RemoveNeutrons>
         <MinPurity>0</MinPurity>
         <MinCompleteness>0</MinCompleteness>
@@ -602,9 +629,11 @@
     </algorithm-->
 
     <!--algorithm type = "LArVisualParticleMonitoring">
-        <CaloHitListNames>CaloHitList2D</CaloHitListNames>
+        <CaloHitListName>SSCaloHitList2D</CaloHitListName>
+	<PfoListName>NeutrinoParticles3D</PfoListName>
 	<MCParticleListNames>Input</MCParticleListNames>
-        <ShowPFOMatchedMC>true</ShowPFOMatchedMC>
+	<ShowPFOMatchedMC>true</ShowPFOMatchedMC>
+	<GroupMCByPDG>true</GroupMCByPDG>
         <VisualizeMC>true</VisualizeMC>
         <VisualizePFO>true</VisualizePFO>
     </algorithm-->
