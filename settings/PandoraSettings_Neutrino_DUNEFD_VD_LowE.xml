@@ -211,7 +211,7 @@
 	<CaloHitListName>CaloHitList2D</CaloHitListName>
 	<InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
 	<EnableProbability>true</EnableProbability>
-	<MinProbabilityCut>0.5f</MinProbabilityCut>
+	<MinProbabilityCut>0.55f</MinProbabilityCut>
 	<TrainingSetMode>false</TrainingSetMode>
 	<TrainingOutputFileName>LowEBackgroundClusterMergingOutputFixed.csv</TrainingOutputFileName>
 	<MvaFileName>PandoraMVAData/LowEBackgroundClusterMergingFixed.xml</MvaFileName>
@@ -264,7 +264,7 @@
         <CaloHitListName>CaloHitList2D</CaloHitListName>
         <InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
         <EnableProbability>false</EnableProbability>
-	<MinProbabilityCut>0.4f</MinProbabilityCut>
+	<MinProbabilityCut>0.375f</MinProbabilityCut>
         <TrainingSetMode>false</TrainingSetMode>
         <TrainingOutputFileName>LowEClusterMergingOutput.csv</TrainingOutputFileName>
         <MvaFileName>PandoraMVAData/LowEBackgroundClusterMergingFixed.xml</MvaFileName>
@@ -274,8 +274,8 @@
         <TreeName2>void</TreeName2>
         <FileName>LowE.root</FileName>
         <UpperHitThreshold>100</UpperHitThreshold>
-        <MinNCaloHits>2</MinNCaloHits>
-        <CountHitsThreshold>17</CountHitsThreshold>
+        <MinNCaloHits>4</MinNCaloHits>
+        <CountHitsThreshold>12</CountHitsThreshold>
         <ContactThreshold>2</ContactThreshold>
         <ProximityThreshold>5</ProximityThreshold>
         <EdgeHitToolDivisions>16</EdgeHitToolDivisions>
