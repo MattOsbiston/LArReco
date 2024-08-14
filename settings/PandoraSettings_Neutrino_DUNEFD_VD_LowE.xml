@@ -33,7 +33,8 @@
         <TrainingMode>false</TrainingMode>
 	<ImageHeight>512</ImageHeight>
         <ImageWidth>512</ImageWidth>
-	<PrintOut>true</PrintOut>
+	<PrintOut>false</PrintOut>
+	<TrainingOutputFileName>LowE_P1</TrainingOutputFileName>
 	<ApplyCheatedSeparation>false</ApplyCheatedSeparation>
 	<CaloHitListNames>SSCaloHitListW SSCaloHitListU SSCaloHitListV</CaloHitListNames>
 	<CaloHitListName2D>SSCaloHitList2D</CaloHitListName2D>
@@ -43,14 +44,15 @@
 	<SignalListNameW>SCaloHitListW</SignalListNameW>
 	<SignalListName2D>SCaloHitList2D</SignalListName2D>
 	<BackgroundListName>BBCaloHitList</BackgroundListName>
-        <ModelFileNameU>PandoraNetworkData/PandoraUnet_backgrounds_photons_new_v5.0_1_U.pt</ModelFileNameU>
-	<ModelFileNameV>PandoraNetworkData/PandoraUnet_backgrounds_photons_new_v5.0_1_V.pt</ModelFileNameV>
-	<ModelFileNameW>PandoraNetworkData/PandoraUnet_backgrounds_photons_new_v5.0_1_W.pt</ModelFileNameW>
-        <Visualise>false</Visualise>
+        <ModelFileNameU>PandoraNetworkData/PandoraUnet_dunefdvd_backgrounds_lowe_1_U.pt</ModelFileNameU>
+	<ModelFileNameV>PandoraNetworkData/PandoraUnet_dunefdvd_backgrounds_lowe_1_V.pt</ModelFileNameV>
+	<ModelFileNameW>PandoraNetworkData/PandoraUnet_dunefdvd_backgrounds_lowe_1_W.pt</ModelFileNameW>
+	<Visualise>false</Visualise>
     </algorithm>
 
     <algorithm type = "LArDLSignal">
 	<TrainingMode>false</TrainingMode>
+	<TrainingOutputFileName>LowE_P2</TrainingOutputFileName>
 	<PrintOut>false</PrintOut>
         <Pass>2</Pass>
 	<ImageHeight>128</ImageHeight>
@@ -63,10 +65,10 @@
         <SignalListNameW>CaloHitListW</SignalListNameW>
 	<SignalListName2D>CaloHitList2D</SignalListName2D>
 	<BackgroundListName>BCaloHitList</BackgroundListName>
-        <ModelFileNameU>PandoraNetworkData/PandoraUnet_backgrounds_photons_new_v5.0_2_V.pt</ModelFileNameU>
-        <ModelFileNameV>PandoraNetworkData/PandoraUnet_backgrounds_photons_new_v5.0_2_V.pt</ModelFileNameV>
-        <ModelFileNameW>PandoraNetworkData/PandoraUnet_backgrounds_photons_2_W.pt</ModelFileNameW>
-        <Visualise>false</Visualise>
+        <ModelFileNameU>PandoraNetworkData/PandoraUnet_dunefdvd_backgrounds_lowe_2_U.pt</ModelFileNameU>
+	<ModelFileNameV>PandoraNetworkData/PandoraUnet_dunefdvd_backgrounds_lowe_2_V.pt</ModelFileNameV>
+        <ModelFileNameW>PandoraNetworkData/PandoraUnet_dunefdvd_backgrounds_lowe_2_W.pt</ModelFileNameW>
+        <Visualise>true</Visualise>
     </algorithm>
 
     <!--algorithm type = "LArMCParticleMonitoring">
@@ -79,15 +81,27 @@
     </algorithm-->
 
     <!--algorithm type = "LArVisualMonitoring">
-       <CaloHitListNames>SCaloHitListW SCaloHitListU SCaloHitListV</CaloHitListNames>
+       <CaloHitListNames>SSCaloHitListW SSCaloHitListU SSCaloHitListV</CaloHitListNames>
        <ShowDetector>true</ShowDetector>
+    </algorithm-->
+
+    <!--algorithm type = "LArVisualParticleMonitoring">
+        <CaloHitListName>SSCaloHitList2D</CaloHitListName>
+        <PfoListName>NeutrinoParticles3D</PfoListName>
+        <MCParticleListNames>Input</MCParticleListNames>
+        <ShowPFOMatchedMC>true</ShowPFOMatchedMC>
+        <GroupMCByPDG>true</GroupMCByPDG>
+        <VisualizeMC>true</VisualizeMC>
+        <VisualizePFO>true</VisualizePFO>
     </algorithm-->
 
     <!--algorithm type = "LArVisualMonitoring">
        <CaloHitListNames>CaloHitListW CaloHitListU CaloHitListV</CaloHitListNames>
        <ShowDetector>true</ShowDetector>
     </algorithm-->
- 
+
+
+
     <algorithm type = "LArDLVertexing">
         <TrainingMode>false</TrainingMode>
         <OutputVertexListName>NeutrinoVertices3D_Pass1</OutputVertexListName>
@@ -211,7 +225,7 @@
 	<CaloHitListName>CaloHitList2D</CaloHitListName>
 	<InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
 	<EnableProbability>true</EnableProbability>
-	<MinProbabilityCut>0.55f</MinProbabilityCut>
+	<MinProbabilityCut>0.5f</MinProbabilityCut>
 	<TrainingSetMode>false</TrainingSetMode>
 	<TrainingOutputFileName>LowEBackgroundClusterMergingOutputFixed.csv</TrainingOutputFileName>
 	<MvaFileName>PandoraMVAData/LowEBackgroundClusterMergingFixed.xml</MvaFileName>
@@ -238,7 +252,7 @@
 	<CaloHitListName>CaloHitList2D</CaloHitListName>
         <InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
         <EnableProbability>false</EnableProbability>
-        <MinProbabilityCut>0.45f</MinProbabilityCut>
+        <MinProbabilityCut>0.4f</MinProbabilityCut>
         <TrainingSetMode>false</TrainingSetMode>
         <TrainingOutputFileName>LowEClusterMergingOutput.csv</TrainingOutputFileName>
         <MvaFileName>PandoraMVAData/LowEBackgroundClusterMergingFixed.xml</MvaFileName>
@@ -264,7 +278,7 @@
         <CaloHitListName>CaloHitList2D</CaloHitListName>
         <InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
         <EnableProbability>false</EnableProbability>
-	<MinProbabilityCut>0.375f</MinProbabilityCut>
+	<MinProbabilityCut>0.35f</MinProbabilityCut>
         <TrainingSetMode>false</TrainingSetMode>
         <TrainingOutputFileName>LowEClusterMergingOutput.csv</TrainingOutputFileName>
         <MvaFileName>PandoraMVAData/LowEBackgroundClusterMergingFixed.xml</MvaFileName>
@@ -355,7 +369,8 @@
     <!-- ThreeDRecoveryAlgorithms -->
     <algorithm type = "LArVertexBasedPfoRecovery">
         <InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
-        <OutputPfoListName>TrackParticles3D</OutputPfoListName>
+	<OutputPfoListName>TrackParticles3D</OutputPfoListName>
+	<LowEnergyWorkflow>true</LowEnergyWorkflow>
     </algorithm>
     <algorithm type = "LArParticleRecovery">
         <InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
@@ -608,20 +623,20 @@
         <VertexListName>DaughterVertices3D</VertexListName>
     </algorithm>
   
-    <algorithm type = "LArHierarchyValidation">
+    <!--algorithm type = "LArHierarchyValidation">
         <CaloHitListName>SSCaloHitList2D</CaloHitListName>
         <PfoListName>NeutrinoParticles3D</PfoListName>
-        <ValidateMC>true</ValidateMC>
+	<ValidateMC>true</ValidateMC>
 	<WriteTree>true</WriteTree>
         <FileName>hierarchy_validation_background.root</FileName>
         <TreeName>mc</TreeName>
-        <FoldToPrimaries>false</FoldToPrimaries>
+        <FoldToPrimaries>true</FoldToPrimaries>
         <RemoveNeutrons>false</RemoveNeutrons>
         <MinPurity>0</MinPurity>
         <MinCompleteness>0</MinCompleteness>
         <MinHits>3</MinHits>
         <MinHitsForGoodView>1</MinHitsForGoodView>
-    </algorithm>
+    </algorithm-->
 
     <!--algorithm type = "LArVisualMonitoring">
        <CaloHitListNames>CaloHitListU CaloHitListV CaloHitListW CaloHitList2D</CaloHitListNames>	    
