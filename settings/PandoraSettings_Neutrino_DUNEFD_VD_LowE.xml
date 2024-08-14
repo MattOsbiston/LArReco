@@ -29,7 +29,7 @@
     </algorithm-->
 
 
-    <algorithm type = "LArDLSignal">
+    <algorithm type = "LArDLSNSignal">
         <TrainingMode>false</TrainingMode>
 	<ImageHeight>512</ImageHeight>
         <ImageWidth>512</ImageWidth>
@@ -50,7 +50,7 @@
 	<Visualise>false</Visualise>
     </algorithm>
 
-    <algorithm type = "LArDLSignal">
+    <algorithm type = "LArDLSNSignal">
 	<TrainingMode>false</TrainingMode>
 	<TrainingOutputFileName>LowE_P2</TrainingOutputFileName>
 	<PrintOut>false</PrintOut>
@@ -68,7 +68,7 @@
         <ModelFileNameU>PandoraNetworkData/PandoraUnet_dunefdvd_backgrounds_lowe_2_U.pt</ModelFileNameU>
 	<ModelFileNameV>PandoraNetworkData/PandoraUnet_dunefdvd_backgrounds_lowe_2_V.pt</ModelFileNameV>
         <ModelFileNameW>PandoraNetworkData/PandoraUnet_dunefdvd_backgrounds_lowe_2_W.pt</ModelFileNameW>
-        <Visualise>true</Visualise>
+        <Visualise>false</Visualise>
     </algorithm>
 
     <!--algorithm type = "LArMCParticleMonitoring">
@@ -623,7 +623,7 @@
         <VertexListName>DaughterVertices3D</VertexListName>
     </algorithm>
   
-    <!--algorithm type = "LArHierarchyValidation">
+    <algorithm type = "LArHierarchyValidation">
         <CaloHitListName>SSCaloHitList2D</CaloHitListName>
         <PfoListName>NeutrinoParticles3D</PfoListName>
 	<ValidateMC>true</ValidateMC>
@@ -636,7 +636,7 @@
         <MinCompleteness>0</MinCompleteness>
         <MinHits>3</MinHits>
         <MinHitsForGoodView>1</MinHitsForGoodView>
-    </algorithm-->
+    </algorithm>
 
     <!--algorithm type = "LArVisualMonitoring">
        <CaloHitListNames>CaloHitListU CaloHitListV CaloHitListW CaloHitList2D</CaloHitListNames>	    
