@@ -33,17 +33,17 @@
         <TrainingMode>false</TrainingMode>
 	<ImageHeight>128</ImageHeight>
         <ImageWidth>128</ImageWidth>
-	<PrintOut>false</PrintOut>
+	<PrintOut>true</PrintOut>
 	<TrainingOutputFileName>LowE_P1</TrainingOutputFileName>
 	<ApplyCheatedSeparation>false</ApplyCheatedSeparation>
 	<ApplySignalZoomRandomised>true</ApplySignalZoomRandomised>
 	<CaloHitListNames>SSCaloHitListW SSCaloHitListU SSCaloHitListV</CaloHitListNames>
 	<CaloHitListName2D>SSCaloHitList2D</CaloHitListName2D>
 	<InputCaloHitListNames>SSCaloHitListW SSCaloHitListU SSCaloHitListV</InputCaloHitListNames>
-	<SignalListNameU>SCaloHitListU</SignalListNameU>
-	<SignalListNameV>SCaloHitListV</SignalListNameV>
-	<SignalListNameW>SCaloHitListW</SignalListNameW>
-	<SignalListName2D>SCaloHitList2D</SignalListName2D>
+	<SignalListNameU>U</SignalListNameU>
+	<SignalListNameV>V</SignalListNameV>
+	<SignalListNameW>W</SignalListNameW>
+	<SignalListName2D>2D</SignalListName2D>
 	<BackgroundListName>BBCaloHitList</BackgroundListName>
 	<ZoomCaloHitListU>CaloHitListU</ZoomCaloHitListU>
 	<ZoomCaloHitListV>CaloHitListV</ZoomCaloHitListV>
@@ -58,7 +58,7 @@
     <!--algorithm type = "LArDLSNSignal">
 	<TrainingMode>false</TrainingMode>
 	<TrainingOutputFileName>LowE_P2</TrainingOutputFileName>
-	<PrintOut>false</PrintOut>
+	<PrintOut>true</PrintOut>
         <Pass>2</Pass>
 	<ImageHeight>128</ImageHeight>
 	<ImageWidth>128</ImageWidth>
@@ -632,7 +632,7 @@
         <CaloHitListName>SSCaloHitList2D</CaloHitListName>
         <PfoListName>NeutrinoParticles3D</PfoListName>
 	<ValidateMC>true</ValidateMC>
-	<WriteTree>false</WriteTree>
+	<WriteTree>true</WriteTree>
         <FileName>hierarchy_validation_background.root</FileName>
         <TreeName>mc</TreeName>
         <FoldToPrimaries>true</FoldToPrimaries>
