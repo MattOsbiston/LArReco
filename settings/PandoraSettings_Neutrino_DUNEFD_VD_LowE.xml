@@ -31,11 +31,12 @@
 
     <algorithm type = "LArDLSNSignal">
         <TrainingMode>false</TrainingMode>
-	<ImageHeight>512</ImageHeight>
-        <ImageWidth>512</ImageWidth>
+	<ImageHeight>128</ImageHeight>
+        <ImageWidth>128</ImageWidth>
 	<PrintOut>false</PrintOut>
 	<TrainingOutputFileName>LowE_P1</TrainingOutputFileName>
 	<ApplyCheatedSeparation>false</ApplyCheatedSeparation>
+	<ApplySignalZoomRandomised>true</ApplySignalZoomRandomised>
 	<CaloHitListNames>SSCaloHitListW SSCaloHitListU SSCaloHitListV</CaloHitListNames>
 	<CaloHitListName2D>SSCaloHitList2D</CaloHitListName2D>
 	<InputCaloHitListNames>SSCaloHitListW SSCaloHitListU SSCaloHitListV</InputCaloHitListNames>
@@ -44,13 +45,17 @@
 	<SignalListNameW>SCaloHitListW</SignalListNameW>
 	<SignalListName2D>SCaloHitList2D</SignalListName2D>
 	<BackgroundListName>BBCaloHitList</BackgroundListName>
+	<ZoomCaloHitListU>CaloHitListU</ZoomCaloHitListU>
+	<ZoomCaloHitListV>CaloHitListV</ZoomCaloHitListV>
+	<ZoomCaloHitListW>CaloHitListW</ZoomCaloHitListW>
         <ModelFileNameU>PandoraNetworkData/PandoraUnet_dunefdvd_backgrounds_lowe_1_U.pt</ModelFileNameU>
 	<ModelFileNameV>PandoraNetworkData/PandoraUnet_dunefdvd_backgrounds_lowe_1_V.pt</ModelFileNameV>
 	<ModelFileNameW>PandoraNetworkData/PandoraUnet_dunefdvd_backgrounds_lowe_1_W.pt</ModelFileNameW>
 	<Visualise>false</Visualise>
+	<VisualiseZoom>true</VisualiseZoom>
     </algorithm>
 
-    <algorithm type = "LArDLSNSignal">
+    <!--algorithm type = "LArDLSNSignal">
 	<TrainingMode>false</TrainingMode>
 	<TrainingOutputFileName>LowE_P2</TrainingOutputFileName>
 	<PrintOut>false</PrintOut>
@@ -69,7 +74,7 @@
 	<ModelFileNameV>PandoraNetworkData/PandoraUnet_dunefdvd_backgrounds_lowe_2_V.pt</ModelFileNameV>
         <ModelFileNameW>PandoraNetworkData/PandoraUnet_dunefdvd_backgrounds_lowe_2_W.pt</ModelFileNameW>
         <Visualise>false</Visualise>
-    </algorithm>
+    </algorithm-->
 
     <!--algorithm type = "LArMCParticleMonitoring">
        <MCParticleListName>Input</MCParticleListName>
@@ -627,7 +632,7 @@
         <CaloHitListName>SSCaloHitList2D</CaloHitListName>
         <PfoListName>NeutrinoParticles3D</PfoListName>
 	<ValidateMC>true</ValidateMC>
-	<WriteTree>true</WriteTree>
+	<WriteTree>false</WriteTree>
         <FileName>hierarchy_validation_background.root</FileName>
         <TreeName>mc</TreeName>
         <FoldToPrimaries>true</FoldToPrimaries>
