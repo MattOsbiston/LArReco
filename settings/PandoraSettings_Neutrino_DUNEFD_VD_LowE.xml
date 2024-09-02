@@ -31,19 +31,19 @@
 
     <algorithm type = "LArDLSNSignal">
         <TrainingMode>false</TrainingMode>
-	<ImageHeight>128</ImageHeight>
-        <ImageWidth>128</ImageWidth>
-	<PrintOut>true</PrintOut>
+	<ImageHeight>512</ImageHeight>
+        <ImageWidth>512</ImageWidth>
+	<PrintOut>false</PrintOut>
 	<TrainingOutputFileName>LowE_P1</TrainingOutputFileName>
 	<ApplyCheatedSeparation>false</ApplyCheatedSeparation>
-	<ApplySignalZoomRandomised>true</ApplySignalZoomRandomised>
+	<ApplySignalZoomRandomised>false</ApplySignalZoomRandomised>
 	<CaloHitListNames>SSCaloHitListW SSCaloHitListU SSCaloHitListV</CaloHitListNames>
 	<CaloHitListName2D>SSCaloHitList2D</CaloHitListName2D>
 	<InputCaloHitListNames>SSCaloHitListW SSCaloHitListU SSCaloHitListV</InputCaloHitListNames>
-	<SignalListNameU>U</SignalListNameU>
-	<SignalListNameV>V</SignalListNameV>
-	<SignalListNameW>W</SignalListNameW>
-	<SignalListName2D>2D</SignalListName2D>
+	<SignalListNameU>SCaloHitListU</SignalListNameU>
+	<SignalListNameV>SCaloHitListV</SignalListNameV>
+	<SignalListNameW>SCaloHitListW</SignalListNameW>
+	<SignalListName2D>SCaloHitList2D</SignalListName2D>
 	<BackgroundListName>BBCaloHitList</BackgroundListName>
 	<ZoomCaloHitListU>CaloHitListU</ZoomCaloHitListU>
 	<ZoomCaloHitListV>CaloHitListV</ZoomCaloHitListV>
@@ -52,13 +52,13 @@
 	<ModelFileNameV>PandoraNetworkData/PandoraUnet_dunefdvd_backgrounds_lowe_1_V.pt</ModelFileNameV>
 	<ModelFileNameW>PandoraNetworkData/PandoraUnet_dunefdvd_backgrounds_lowe_1_W.pt</ModelFileNameW>
 	<Visualise>false</Visualise>
-	<VisualiseZoom>true</VisualiseZoom>
+	<VisualiseZoom>false</VisualiseZoom>
     </algorithm>
 
-    <!--algorithm type = "LArDLSNSignal">
+    <algorithm type = "LArDLSNSignal">
 	<TrainingMode>false</TrainingMode>
 	<TrainingOutputFileName>LowE_P2</TrainingOutputFileName>
-	<PrintOut>true</PrintOut>
+	<PrintOut>false</PrintOut>
         <Pass>2</Pass>
 	<ImageHeight>128</ImageHeight>
 	<ImageWidth>128</ImageWidth>
@@ -74,7 +74,7 @@
 	<ModelFileNameV>PandoraNetworkData/PandoraUnet_dunefdvd_backgrounds_lowe_2_V.pt</ModelFileNameV>
         <ModelFileNameW>PandoraNetworkData/PandoraUnet_dunefdvd_backgrounds_lowe_2_W.pt</ModelFileNameW>
         <Visualise>false</Visualise>
-    </algorithm-->
+    </algorithm>
 
     <!--algorithm type = "LArMCParticleMonitoring">
        <MCParticleListName>Input</MCParticleListName>
@@ -632,15 +632,17 @@
         <CaloHitListName>SSCaloHitList2D</CaloHitListName>
         <PfoListName>NeutrinoParticles3D</PfoListName>
 	<ValidateMC>true</ValidateMC>
-	<WriteTree>true</WriteTree>
-        <FileName>hierarchy_validation_background.root</FileName>
-        <TreeName>mc</TreeName>
+	<WriteEventTree>false</WriteEventTree>
+	<MCFileName>hierarchy_validation_background.root</MCFileName>
+	<EventFileName>hierarchy_validation_background.root</EventFileName>
+	<MCTreeName>mc</MCTreeName>
+	<EventTreeName>mc</EventTreeName>
         <FoldToPrimaries>true</FoldToPrimaries>
         <RemoveNeutrons>false</RemoveNeutrons>
         <MinPurity>0</MinPurity>
         <MinCompleteness>0</MinCompleteness>
-        <MinHits>3</MinHits>
-        <MinHitsForGoodView>1</MinHitsForGoodView>
+        <MinRecoHits>3</MinRecoHits>
+        <MinRecoHitsPerView>1</MinRecoHitsPerView>
     </algorithm>
 
     <!--algorithm type = "LArVisualMonitoring">
@@ -649,7 +651,7 @@
        <ShowDetector>true</ShowDetector>
     </algorithm-->
 
-    <!--algorithm type = "LArVisualParticleMonitoring">
+    <algorithm type = "LArVisualParticleMonitoring">
         <CaloHitListName>SSCaloHitList2D</CaloHitListName>
 	<PfoListName>NeutrinoParticles3D</PfoListName>
 	<MCParticleListNames>Input</MCParticleListNames>
@@ -657,7 +659,7 @@
 	<GroupMCByPDG>true</GroupMCByPDG>
         <VisualizeMC>true</VisualizeMC>
         <VisualizePFO>true</VisualizePFO>
-    </algorithm-->
+    </algorithm>
 
 
     <!-- Output list management -->
