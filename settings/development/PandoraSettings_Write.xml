@@ -17,6 +17,7 @@
         <ShouldWriteTrackRelationships>true</ShouldWriteTrackRelationships>
         <GeometryFileName>Pandora_Geometry.xml</GeometryFileName>
         <ShouldWriteGeometry>true</ShouldWriteGeometry>
-        <ShouldOverwriteGeometryFile>true</ShouldOverwriteGeometryFile>
+	<ShouldOverwriteGeometryFile>true</ShouldOverwriteGeometryFile>
+	<LArCaloHitVersion>2<LArCaloHitVersion>
     </algorithm>
 </pandora>
