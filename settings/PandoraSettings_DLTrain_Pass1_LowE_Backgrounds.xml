@@ -18,11 +18,13 @@
         <CurrentCaloHitListReplacement>CaloHitList2D</CurrentCaloHitListReplacement>
     </algorithm>
 
-    <algorithm type = "LArDLSignal">
+    <algorithm type = "LArDLSNSignal">
         <TrainingMode>true</TrainingMode>
-        <TrainingOutputFileName>DUNEFD_LowE_Backgrounds_New_4.0</TrainingOutputFileName>
-	<CaloHitListNames>CaloHitListW CaloHitListU CaloHitListV</CaloHitListNames>
-	<InputCaloHitListNames>CaloHitListW CaloHitListU CaloHitListV</InputCaloHitListNames>
-	<CaloHitListName2D>CaloHitList2D</CaloHitListName2D>
+        <ImageWidth>256</ImageWidth>
+        <ImageHeight>256</ImageHeight>
+        <TrainingOutputFileName>DUNEFD_VD_Production_LowE_Backgrounds_27_11_24_Pass1</TrainingOutputFileName>
+        <CaloHitListNames>CaloHitListW CaloHitListU CaloHitListV</CaloHitListNames>
+        <InputCaloHitListNames>CaloHitListW CaloHitListU CaloHitListV</InputCaloHitListNames>
+        <CaloHitListName2D>CaloHitList2D</CaloHitListName2D>
     </algorithm>
 </pandora>

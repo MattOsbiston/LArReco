@@ -5,6 +5,12 @@
     <SingleHitTypeClusteringMode>true</SingleHitTypeClusteringMode>
 
     <!-- ALGORITHM SETTINGS -->
+    <algorithm type = "LArEventReading">
+        <LArMCParticleVersion>2</LArMCParticleVersion>
+        <LArCaloHitVersion>2</LArCaloHitVersion>
+    </algorithm>
+
+    <!-- ALGORITHM SETTINGS -->
     <algorithm type = "LArPreProcessing">
         <OutputCaloHitListNameU>SSCaloHitListU</OutputCaloHitListNameU>
         <OutputCaloHitListNameV>SSCaloHitListV</OutputCaloHitListNameV>
@@ -209,42 +215,16 @@
         <InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
         <EnableProbability>false</EnableProbability>
         <MinProbabilityCut>0.475f</MinProbabilityCut>
-        <TrainingSetMode>false</TrainingSetMode>
-        <TrainingOutputFileName>LowEBackgroundClusterMergingOutputFixed.csv</TrainingOutputFileName>
-        <MvaFileName>PandoraMVAData/LowE_MVAClusterMerge_VDBackgrounds_NewProduction_01_12_24_medium.xml</MvaFileName>
-	<MvaName>MVALowEClusterMerging</MvaName>
-        <WriteTree>false</WriteTree>
-        <TreeName>void</TreeName>
-        <TreeName2>void</TreeName2>
-        <FileName>LowE.root</FileName>
-        <UpperHitThreshold>4</UpperHitThreshold>
-        <MinNCaloHits>1</MinNCaloHits>
-        <CountHitsThreshold>0</CountHitsThreshold>
-        <ContactThreshold>5</ContactThreshold>
-        <ProximityThreshold>20</ProximityThreshold>
-        <EdgeHitToolDivisions>8</EdgeHitToolDivisions>
-        <SectorTolerance>0.04</SectorTolerance>
-    </algorithm>
-
-    <!-- BdtLowEClusterMergingAlgorithm -->
-     <algorithm type = "LArBdtLowEClusterMerging">
-        <MCParticleListName>Input</MCParticleListName>
-        <PrintOut>false</PrintOut>
-        <VertexListName>NeutrinoVertices3D</VertexListName>
-        <CaloHitListName>CaloHitList2D</CaloHitListName>
-        <InputClusterListNames>ClustersU ClustersV ClustersW</InputClusterListNames>
-        <EnableProbability>false</EnableProbability>
-        <MinProbabilityCut>0.475f</MinProbabilityCut>
-        <TrainingSetMode>false</TrainingSetMode>
-        <TrainingOutputFileName>LowEClusterMergingOutput.csv</TrainingOutputFileName>
-        <MvaFileName>PandoraMVAData/LowE_MVAClusterMerge_VDBackgrounds_NewProduction_01_12_24_medium.xml</MvaFileName>
+        <TrainingSetMode>true</TrainingSetMode>
+        <TrainingOutputFileName>LowESignalBackgroundClusterMerging_02_12_24_v2.csv</TrainingOutputFileName>
+        <MvaFileName>PandoraMVAData/LowEBackgroundClusterMergingFixed.xml</MvaFileName>
         <MvaName>MVALowEClusterMerging</MvaName>
         <WriteTree>false</WriteTree>
         <TreeName>void</TreeName>
         <TreeName2>void</TreeName2>
         <FileName>LowE.root</FileName>
         <UpperHitThreshold>100</UpperHitThreshold>
-        <MinNCaloHits>4</MinNCaloHits>
+        <MinNCaloHits>1</MinNCaloHits>
         <CountHitsThreshold>0</CountHitsThreshold>
         <ContactThreshold>5</ContactThreshold>
         <ProximityThreshold>20</ProximityThreshold>
@@ -784,21 +764,6 @@
     <algorithm type = "LArTrackParticleBuilding">
         <PfoListName>TrackParticles3D</PfoListName>
         <VertexListName>DaughterVertices3D</VertexListName>
-    </algorithm>
-
-    <algorithm type = "LArHierarchyValidation">
-        <CaloHitListName>SSCaloHitList2D</CaloHitListName>
-        <PfoListName>NeutrinoParticles3D</PfoListName>
-        <ValidateMC>true</ValidateMC>
-        <WriteTree>true</WriteTree>
-        <FileName>hierarchy_validation_background.root</FileName>
-        <TreeName>mc</TreeName>
-        <FoldToPrimaries>true</FoldToPrimaries>
-        <RemoveNeutrons>false</RemoveNeutrons>
-        <MinPurity>0</MinPurity>
-        <MinCompleteness>0</MinCompleteness>
-        <MinHits>3</MinHits>
-        <MinHitsForGoodView>1</MinHitsForGoodView>
     </algorithm>
 
     <!--algorithm type = "LArVisualParticleMonitoring">

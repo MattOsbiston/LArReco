@@ -18,10 +18,10 @@
         <CurrentCaloHitListReplacement>SSCaloHitList2D</CurrentCaloHitListReplacement>
     </algorithm>
 
-    <algorithm type = "LArDLSignal">
+    <algorithm type = "LArDLSNSignal">
         <TrainingMode>false</TrainingMode>
-	<ImageWidth>512</ImageWidth>
-	<ImageHeight>512</ImageHeight>
+	<ImageWidth>256</ImageWidth>
+	<ImageHeight>256</ImageHeight>
 	<CaloHitListNames>SSCaloHitListW SSCaloHitListU SSCaloHitListV</CaloHitListNames>
         <InputCaloHitListNames>SSCaloHitListW SSCaloHitListU SSCaloHitListV</InputCaloHitListNames>
 	<CaloHitListName2D>SSCaloHitList2D</CaloHitListName2D>
@@ -29,16 +29,16 @@
         <SignalListNameV>SCaloHitListV</SignalListNameV>
         <SignalListNameW>SCaloHitListW</SignalListNameW>
         <SignalListName2D>SCaloHitList2D</SignalListName2D>
-        <ModelFileNameU>PandoraNetworkData/PandoraUnet_backgrounds_photons_new_v5.0_1_U.pt</ModelFileNameU>
-        <ModelFileNameV>PandoraNetworkData/PandoraUnet_backgrounds_photons_new_v5.0_1_V.pt</ModelFileNameV>
-        <ModelFileNameW>PandoraNetworkData/PandoraUnet_backgrounds_photons_new_v5.0_1_W.pt</ModelFileNameW>
+        <ModelFileNameU>PandoraNetworkData/PandoraUnet_dunefdvd_backgrounds_lowe_28_11_24_1_U.pt</ModelFileNameU>
+        <ModelFileNameV>PandoraNetworkData/PandoraUnet_dunefdvd_backgrounds_lowe_28_11_24_1_V.pt</ModelFileNameV>
+        <ModelFileNameW>PandoraNetworkData/PandoraUnet_dunefdvd_backgrounds_lowe_28_11_24_1_W.pt</ModelFileNameW>
         <Visualise>false</Visualise>
     </algorithm>
 
-    <algorithm type = "LArDLSignal">
+    <algorithm type = "LArDLSNSignal">
 	<TrainingMode>true</TrainingMode>
 	<Pass>2</Pass>
-	<TrainingOutputFileName>DUNEFD_LowE_Backgrounds_Pass_2_photons_v5</TrainingOutputFileName>
+	<TrainingOutputFileName>DUNEFD_VD_Production_LowE_Backgrounds_28_11_24_Pass2</TrainingOutputFileName>
 	<ImageWidth>128</ImageWidth>
         <ImageHeight>128</ImageHeight>
 	<CaloHitListNames>SSCaloHitListW SSCaloHitListU SSCaloHitListV</CaloHitListNames>

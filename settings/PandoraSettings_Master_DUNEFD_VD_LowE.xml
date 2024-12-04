@@ -25,7 +25,7 @@
 
     <algorithm type = "LArDLMaster">
         <CRSettingsFile>PandoraSettings_Cosmic_DUNEFD_VD.xml</CRSettingsFile>
-	<NuSettingsFile>PandoraSettings_Neutrino_DUNEFD_VD_LowE_Thesis_PFO_Mods.xml</NuSettingsFile>
+	<NuSettingsFile>PandoraSettings_Neutrino_DUNEFD_VD_LowE_Thesis_PFO_Mods_Production_Networks.xml</NuSettingsFile>
         <SlicingSettingsFile>PandoraSettings_Slicing_Standard.xml</SlicingSettingsFile>
         <StitchingTools>
             <tool type = "LArStitchingCosmicRayMerging"><ThreeDStitchingMode>true</ThreeDStitchingMode></tool>
@@ -45,6 +45,13 @@
         <RecreatedVertexListName>RecreatedVertices</RecreatedVertexListName>
         <VisualizeOverallRecoStatus>true</VisualizeOverallRecoStatus>
         <LArCaloHitVersion>2</LArCaloHitVersion>
+    </algorithm>
+
+    <algorithm type = "LArVertexMonitoring">
+        <Visualize>false</Visualize>
+        <WriteFile>false</WriteFile>
+        <Filename>vertices_LowE.root</Filename>
+        <Treename>vertices</Treename>
     </algorithm>
 
     <!--algorithm type = "LArVisualMonitoring">
