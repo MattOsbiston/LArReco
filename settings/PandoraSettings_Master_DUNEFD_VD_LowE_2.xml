@@ -17,9 +17,15 @@
         <CurrentCaloHitListReplacement>CaloHitList2D</CurrentCaloHitListReplacement>
     </algorithm>
     
+    <!--algorithm type = "LArMCParticleMonitoring">
+       <MCParticleListName>Input</MCParticleListName>
+       <CaloHitListName>CaloHitList2D</CaloHitListName>
+       <MinHitsForDisplay>1</MinHitsForDisplay>
+    </algorithm-->
+
     <algorithm type = "LArDLMaster">
         <CRSettingsFile>PandoraSettings_Cosmic_DUNEFD_VD.xml</CRSettingsFile>
-	<NuSettingsFile>PandoraSettings_Neutrino_DUNEFD_VD_LowE_Thesis_PFO_Mods_Production_Networks.xml</NuSettingsFile>
+	<NuSettingsFile>PandoraSettings_Neutrino_DUNEFD_VD_LowE_Thesis_PFO_Mods.xml</NuSettingsFile>
         <SlicingSettingsFile>PandoraSettings_Slicing_Standard.xml</SlicingSettingsFile>
         <StitchingTools>
             <tool type = "LArStitchingCosmicRayMerging"><ThreeDStitchingMode>true</ThreeDStitchingMode></tool>
@@ -61,6 +67,22 @@
 	<ShowPFOMatchedMC>true</ShowPFOMatchedMC>
         <VisualizeMC>false</VisualizeMC>
         <VisualizePFO>true</VisualizePFO>
+    </algorithm-->
+
+
+    <!--algorithm type = "LArHierarchyValidation">
+        <CaloHitListName>CaloHitList2D</CaloHitListName>
+        <PfoListName>RecreatedPfos</PfoListName>
+        <ValidateMC>true</ValidateMC>
+	<WriteTree>true</WriteTree>
+        <FileName>hierarchy_validation_background.root</FileName>
+        <TreeName>mc</TreeName>
+        <FoldToPrimaries>true</FoldToPrimaries>
+        <RemoveNeutrons>false</RemoveNeutrons>
+        <MinPurity>0</MinPurity>
+        <MinCompleteness>0</MinCompleteness>
+        <MinHits>3</MinHits>
+        <MinHitsForGoodView>1</MinHitsForGoodView>
     </algorithm-->
 
 </pandora>
