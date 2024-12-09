@@ -211,7 +211,7 @@
         <MinProbabilityCut>0.475f</MinProbabilityCut>
         <TrainingSetMode>false</TrainingSetMode>
         <TrainingOutputFileName>LowEBackgroundClusterMergingOutputFixed.csv</TrainingOutputFileName>
-        <MvaFileName>PandoraMVAData/LowE_MVAClusterMerge_VDBackgrounds_NewProduction_01_12_24_medium.xml</MvaFileName>
+        <MvaFileName>PandoraMVAData/LowE_MVAClusterMerge_VD_Backgrounds_NewProduction_01_12_24.xml</MvaFileName>
 	<MvaName>MVALowEClusterMerging</MvaName>
         <WriteTree>false</WriteTree>
         <TreeName>void</TreeName>
@@ -237,7 +237,7 @@
         <MinProbabilityCut>0.475f</MinProbabilityCut>
         <TrainingSetMode>false</TrainingSetMode>
         <TrainingOutputFileName>LowEClusterMergingOutput.csv</TrainingOutputFileName>
-        <MvaFileName>PandoraMVAData/LowE_MVAClusterMerge_VDBackgrounds_NewProduction_01_12_24_medium.xml</MvaFileName>
+        <MvaFileName>PandoraMVAData/LowE_MVAClusterMerge_VD_Backgrounds_NewProduction_01_12_24.xml</MvaFileName>
         <MvaName>MVALowEClusterMerging</MvaName>
         <WriteTree>false</WriteTree>
         <TreeName>void</TreeName>
