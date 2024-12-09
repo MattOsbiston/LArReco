@@ -47,9 +47,9 @@
         <ZoomCaloHitListU>SCaloHitListU</ZoomCaloHitListU>
         <ZoomCaloHitListV>SCaloHitListV</ZoomCaloHitListV>
         <ZoomCaloHitListW>SCaloHitListW</ZoomCaloHitListW>
-        <ModelFileNameU>PandoraNetworkData/PandoraUnet_dunefdvd_backgrounds_lowe_28_11_24_1_U.pt</ModelFileNameU>
-        <ModelFileNameV>PandoraNetworkData/PandoraUnet_dunefdvd_backgrounds_lowe_28_11_24_1_V.pt</ModelFileNameV>
-        <ModelFileNameW>PandoraNetworkData/PandoraUnet_dunefdvd_backgrounds_lowe_28_11_24_1_W.pt</ModelFileNameW>
+        <ModelFileNameU>PandoraNetworkData/PandoraUnet_dunefdhd_backgrounds_lowe_06_12_24_1_U.pt</ModelFileNameU>
+        <ModelFileNameV>PandoraNetworkData/PandoraUnet_dunefdhd_backgrounds_lowe_06_12_24_1_V.pt</ModelFileNameV>
+        <ModelFileNameW>PandoraNetworkData/PandoraUnet_dunefdhd_backgrounds_lowe_06_12_24_1_W.pt</ModelFileNameW>
         <Visualise>false</Visualise>
         <VisualiseZoom>false</VisualiseZoom>
     </algorithm>
@@ -69,9 +69,9 @@
         <SignalListNameW>CaloHitListW</SignalListNameW>
         <SignalListName2D>CaloHitList2D</SignalListName2D>
         <BackgroundListName>BCaloHitList</BackgroundListName>
-        <ModelFileNameU>PandoraNetworkData/PandoraUnet_dunefdvd_backgrounds_lowe_28_11_24_2_U.pt</ModelFileNameU>
-        <ModelFileNameV>PandoraNetworkData/PandoraUnet_dunefdvd_backgrounds_lowe_28_11_24_2_V.pt</ModelFileNameV>
-        <ModelFileNameW>PandoraNetworkData/PandoraUnet_dunefdvd_backgrounds_lowe_28_11_24_2_W.pt</ModelFileNameW>
+        <ModelFileNameU>PandoraNetworkData/PandoraUnet_dunefdhd_backgrounds_lowe_06_12_24_2_U.pt</ModelFileNameU>
+        <ModelFileNameV>PandoraNetworkData/PandoraUnet_dunefdhd_backgrounds_lowe_06_12_24_2_V.pt</ModelFileNameV>
+        <ModelFileNameW>PandoraNetworkData/PandoraUnet_dunefdhd_backgrounds_lowe_06_12_24_2_W.pt</ModelFileNameW>
 	<Visualise>false</Visualise>
     </algorithm>
 
@@ -79,9 +79,9 @@
         <TrainingMode>false</TrainingMode>
         <OutputVertexListName>NeutrinoVertices3D_Pass1</OutputVertexListName>
         <CaloHitListNames>CaloHitListW CaloHitListU CaloHitListV</CaloHitListNames>
-        <ModelFileNameU>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_VD_LOWE_Prod_27_11_24_1_U.pt</ModelFileNameU>
-        <ModelFileNameV>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_VD_LOWE_Prod_27_11_24_1_V.pt</ModelFileNameV>
-        <ModelFileNameW>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_VD_LOWE_Prod_27_11_24_1_W.pt</ModelFileNameW>
+        <ModelFileNameU>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_HD_LOWE_Prod_06_12_24_1_U.pt</ModelFileNameU>
+        <ModelFileNameV>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_HD_LOWE_Prod_06_12_24_1_V.pt</ModelFileNameV>
+        <ModelFileNameW>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_HD_LOWE_Prod_06_12_24_1_W.pt</ModelFileNameW>
 	<Visualise>false</Visualise>
         <DistanceThresholds>0. 0.005 0.009 0.015 0.025 0.04 0.06 0.18 0.25 1.0</DistanceThresholds>
     </algorithm>
@@ -92,9 +92,9 @@
         <InputVertexListName>NeutrinoVertices3D_Pass1</InputVertexListName>
         <OutputVertexListName>NeutrinoVertices3D</OutputVertexListName>
         <CaloHitListNames>CaloHitListW CaloHitListU CaloHitListV</CaloHitListNames>
-        <ModelFileNameU>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_VD_LOWE_Prod_27_11_24_2_U.pt</ModelFileNameU>
-        <ModelFileNameV>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_VD_LOWE_Prod_27_11_24_2_V.pt</ModelFileNameV>
-        <ModelFileNameW>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_VD_LOWE_Prod_27_11_24_2_W.pt</ModelFileNameW>
+        <ModelFileNameU>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_HD_LOWE_Prod_06_12_24_2_U.pt</ModelFileNameU>
+        <ModelFileNameV>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_HD_LOWE_Prod_06_12_24_2_V.pt</ModelFileNameV>
+        <ModelFileNameW>PandoraNetworkData/PandoraUnet_Vertex_DUNEFD_HD_LOWE_Prod_06_12_24_2_W.pt</ModelFileNameW>
         <ImageWidth>128</ImageWidth>
         <ImageHeight>128</ImageHeight>
 	<Visualise>false</Visualise>

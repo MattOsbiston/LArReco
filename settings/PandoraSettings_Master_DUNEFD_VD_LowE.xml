@@ -41,12 +41,12 @@
         <LArCaloHitVersion>2</LArCaloHitVersion>
     </algorithm>
 
-    <algorithm type = "LArVertexMonitoring">
+    <!--algorithm type = "LArVertexMonitoring">
         <Visualize>false</Visualize>
-        <WriteFile>false</WriteFile>
+        <WriteFile>true</WriteFile>
         <Filename>vertices_LowE.root</Filename>
         <Treename>vertices</Treename>
-    </algorithm>
+    </algorithm-->
 
     <!--algorithm type = "LArVisualMonitoring">
         <CaloHitListNames>CaloHitListU CaloHitListV CaloHitListW</CaloHitListNames>
